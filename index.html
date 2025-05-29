@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo...</title>
+    <script>
+        function abrirYcerrar() {
+            // Obtener el parámetro "form" de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const formId = urlParams.get('form') || '1'; // Por defecto, usa el formulario 1 si no hay parámetro
+
+            // Definir los enlaces de SharePoint según el formulario
+            const sharepointLinks = {
+                '1': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me/EsCVvpqgCgVFkj-nhIFeXWABPA1PH1EPUEKoPry9-ZWTHg?e=eGL8Sv', // 3DS A CIA
+                '2': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EjaIHTOsMANAojbS_EcL2QgBSPWblF70lLDxogM1LRbEdw?e=6b7UCr', // 3DSX A CIA
+                '3': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eo420C0h2P1HkCQ2Rd6KnPoBLhrVEXCQMeWyjR2-nSlNxQ?e=x8hSeC', // A9LH A BOOT9
+                '4': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eu5mTA3FFItEj0mcd7UgG3wBYvrh8W4d1pKOxAroIQ6zMQ?e=Rp2Ds7', // TWLMENU 
+                '5': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Es_NWrKCkBBHv6LsDwz702ABmz-eFjQ8siJ0G_BxaLb8Iw?e=kQfpzt', // TWLFIX 
+                '6': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Es7fpasWj8pFps3iFQzvug4BFfWJeBfhj4mWWcUfEDpdzA?e=PgYVO8', // ANEMONE
+                '7': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/El1PKfOXrnZIv75D4C73HwABag6NMYxf9iOaDdiRk4wEzA?e=Bhcram', // BAX
+                '8': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EnmN3AwilfFHrVHh937Sso8ByP5sMYqgNIcUkI1EaWrr2A?e=Ok97vg', // BEESHOP
+                '9': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EvHv8KGtJrpJiK4EQRkvD18Bcv-t1WqhsBkV4f8oDNFpNw?e=iKK7xP', // BLACK LAZARUS
+                '10': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EocbEhsNBkNFsYvM5bsorPUBuF6dgitRcFk5BaT8r0ZRGQ?e=JuNAuR', // BLUE LAZARUS
+                '11': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eg8Sm8NU27hMkbFOnzuZN0gBn2bJEvP3sekshEX8R6md-A?e=LoZ8K5', // BOTONES
+                '12': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Em-If_RZCPZMmeKiIryX1NMBsc99y6U9_dBxyze0TQ_FBQ?e=jbqh1Q', // CHECKPOINT
+                '13': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eqd0ja08_dlDnE7Yvyf4y3QBqfp6jndUTA-feiQ1NwUp9Q?e=XbNBLH', // CIA A 3DS
+                '14': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EigwoPl5OIFJgrNzjNPFoecBAxvkMdfRtNUP6iHpciEHiw?e=1dxexw', // CRASH NETWORK
+                '15': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EjVDXojsaHxJm14NAxoj5nwBn2FiadyLqTcMFh3DfezrRA?e=2I9KLT', // CTRNAND 11.15
+                '16': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EjL-KHtko91EuWKsu9pIdH4Bease8ZjCneNpWlNnynxyUA?e=GssLbu', // CTRNAND V1
+                '17': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EtXyCDXkwZlGnWtVF6BY28IBNNrjhELCBufYtuX3Mtop-g?e=eOv2fE', // CTRNAND V2
+                '18': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/ElqdFeA9h4JHlVd65ySpUXoB6WixCwpt10nszWKcLzgO_A?e=0WIQIJ', // CUSTOM-INSTALL
+                '19': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/En8MdRJ4nchAjdRUzXVXjJgBkym0CDPNyvFSJlg9ij2IXg?e=8dpPOh', // DSP1
+                '20': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EtObPaGhEeFLv1Vq7evgWYkBgy4PQQlF7fzt_aFWm5cwyQ?e=JqdVFE', // ELIMINAR HACK
+                '21': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Es_bsERSsIJJpXZaXtLlwp0B8i-zHrpNiB7lnEOFKAXsug?e=9fRTAc', // FAKETIK
+                '22': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eo0TRfCWjrFHkK3B-i6G8zMB0ydzZDuuJ3oOfv9BwTdAHQ?e=Ll8zid', // FBI-INJECT
+                '23': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EpJkmmbL1FtLnQvbrj8Hr3oB-DHX3Lc87Qfe0xnbnNOIDg?e=fuOJIb', // FREAKYHAX
+                '24': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EnnBV6d0jQFGubeWrPubMucBglieM1GvgS1kVd5EVOr_-A?e=tp4Hrw', // FTPD
+                '25': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Et5XmrMpd7hHp-2jPSN6qscB6fCGcroLQk_vnA9nvoCu3A?e=Qsod3T', // JKSM
+                '26': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EqZEPLQUZflKmiusUsWaJ7gB0lc-AZzKzONV6j25Qtks6g?e=Kl0Agh', // KARTMINER7
+                '27': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eryd7h0WH6ZPh96VqlItfbkB4nQl-PPXCRUKswDXx3Krdw?e=gFD9CE', // KARTPLASH
+                '28': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/ElVOILRFJ65Biy5ya35k1SQBP-hCAVusd7kTNE5xWXizMw?e=5XkiW0', // LIMEPLAYER
+                '29': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EkbMskZbJS9Mv5i2rp4fbLIB83eUep34zMJCruC1yMRsIA?e=0sajZt', // LOSED
+                '30': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EvGVMcgrgFhCq2DlBuxXKAcBEQ_0iYiC4DLM1p2k2GpiiA?e=g3FYYm', // LUMA PINK
+                '31': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EvBmieEqYKRHpa8NkET4WcwBtanGVae24VDanepVEX3rvA?e=CjFdhe', // MANDOS PS3-PS4
+                '32': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/ElhUPLPZ3GBJhaNoYpsdskgBsLtWbSJQ7Ya3ye4AARS0Lw?e=m4Q9OB', // MENUHAX67
+                '33': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EpXFhiKPTKFFo0rqtlgdrjUBMGcEsp4JLRe_zEo2AjdZeQ?e=a3u7a4', // MOVABLE FORMAT
+                '34': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EsCVvpqgCgVFkj-nhIFeXWABT27ZTVR82Lml9zKDjgfFzQ?e=BkuHTN', // MSET9
+                '35': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eg937juxZfdJhWv-S64oL7kBS305-rqlpOCw6nK-OxCvzA?e=SrgEte', // MUNDO POKÉMON
+                '36': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EtJCcaTGzaFJiUxJOsnkkEMBiLmI20TiNbaS7XVnGStRBg?e=3zCpul', // NAND-REX
+                '37': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Er_r_G0eaR9DmAFnhnX55AIBUIDgPAZ35UTTd1PBwMrFag?e=0G8UXl', // NINJAX
+                '38': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EpK92Ngn6ztMhUakl08fOl4BXay1xNM9vnLxhYmYjjoyaw?e=eKdP9g', // NTRBOOTSELECTOR
+                '39': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EiPInhxZZEdEibF9Iv6azBcByuJYcY1ySeX-sTi0bDjnyw?e=B7tX8K', // HACK NTR
+                '40': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EtuA0awB73RIuxK05oZBeNcBi4H7MA8Qt2mlM97he6zMSA?e=NCwddY', // ONLINE
+                '41': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EgxdNxO5tf1Gnlq2lIy8BdcBYkvgzLco-SYHAKICTS1K7g?e=g9xmVd', // PCP
+                '42': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Emo4pIvROR1BnnffMJRVp44ByyJVcs6L4emxCSW6GAkZ5g?e=iEGuuN', // RETRO A CIA
+                '43': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/En2GZxVz5n9Ih8cJz-7tawkBzmD9Y1sa-vMaK96eTIapyg?e=hJ9472', // REVIVIR CARTUCHO
+                '44': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EmwP6TGyUIFKlmuKF6JkOiABL_fgBA3jUTD46QrTURlpnA?e=Kg7Tid', // SAFECERTHAX
+                '45': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Ej3zuXNbCr5GoV3r8r7EbN0BEjyWwEHo7bVbFjZNOkDP0A?e=WThGRV', // SDLOADER-GX
+                '46': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EnM98pJd1v5GlT7RhBTGVxIB_nHq2n187qfH7wbZ14B51Q?e=HMyefD', // UNIVERSAL 
+                '47': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EpV5DH81ZgFJuKYXp0xEJcUBb4P0gS4M_a77TqBbo10P6A?e=5RqtkL', // SLOTTOLL
+                '48': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EgzZq9LCXmBLj0zpxQ5nNoMBwAvJGBajLS1RkxSsDqo5Rw?e=ba5oWO', // SUPERSKATER
+                '49': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Ehhle-tp3vdKqNclPcq6XjMBZ8Beq48HFUCh9lhK8wLfeQ?e=MiW6qL', // SYSUPDATER
+                '50': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Ep8YICqaC9hHoybMvlIbHAQBC9XbWDWLEsQV2OY2H1Bhbg?e=e3AAv6', // THEMELY
+                '51': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EgsiuknxPatMgu5Fyl3cdQ4BETtOjNZJclOavLKDJqCTMA?e=31P2Mf', // TIKSWEEP
+                '52': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/Eo_eLNEfkTNOvoXdmJtN1ecBKgo3JxebSDXND_eoFijcSA?e=7u9IHx', // TINYFORMAT
+                '53': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/ElkVvOEVTJVAocolcYQQKVcBO7wdagdHT-04RovndgzNqw?e=0OMSpN', // TITLEREX
+                '54': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EnS_6SfVexpJlmCTCdJaMqkBVQA5_1nkUF_Nk92Jjl3sLQ?e=OATOCa', // TOKYOTRIM
+                '55': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EmcwiTZL2XxLqyblNW32MBkBPcue5U2aBwPPKxK5-HTEng?e=AAnzwc', // YOUTUBE
+                '56': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/EuVv2LIGAD5HsmZ4Bi58Td8B6CFKbZxQ8_DZ8JJtnkFttA?e=EQjsfh', // TUNA
+                '57': 'https://8wb0d8-my.sharepoint.com/:f:/g/personal/kelonio_levelt_me1/ElWE1m1mCzhGqtM7mBnBKMIBSejWbjBYv8HLFeKoy4lMxw?e=Al5CrL', // KERNEL R4
+                '58': ''  // 
+            };
+
+            // Seleccionar el enlace de SharePoint según el formulario
+            const sharepointUrl = sharepointLinks[formId] || sharepointLinks['1'];
+
+            // Abrir la pestaña de SharePoint
+            let sharepointWindow = null;
+
+            try {
+                sharepointWindow = window.open(sharepointUrl, '_blank');
+            } catch (e) {
+                console.error('Error al abrir la ventana de SharePoint:', e);
+                document.body.innerHTML = "<p>Error: No se pudo abrir la pestaña de SharePoint. Desactiva el bloqueador de pop-ups y actualiza la página.</p>";
+                return;
+            }
+
+            // Intentar cerrar la ventana principal después de 1 segundo
+            setTimeout(() => {
+                if (!sharepointWindow) {
+                    document.body.innerHTML = "<p>Error: No se abrió la pestaña de SharePoint. Desactiva el bloqueador de pop-ups y actualiza la página.</p>";
+                } else {
+                    try {
+                        window.close();
+                        document.body.innerHTML = "<p>Redirección completa. Puedes cerrar esta pestaña manualmente.</p>";
+                    } catch (e) {
+                        console.error('Error al cerrar la ventana principal:', e);
+                        document.body.innerHTML = "<p>Redirección completa. Puedes cerrar esta pestaña manualmente.</p>";
+                    }
+                }
+            }, 1000); // 1 segundo
+        }
+
+        // Ejecutar al cargar la página
+        window.onload = abrirYcerrar;
+    </script>
+</head>
+<body>
+    <p>Redirigiendo... Si la pestaña no se abre, desactiva el bloqueador de pop-ups y actualiza la página.</p>
+</body>
+</html>
