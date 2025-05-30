@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo...</title>
+    <script>
+        function abrirYcerrar() {
+            // Obtener el parámetro "form" de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const formId = urlParams.get('form') || '1'; // Por defecto, usa el formulario 1 si no hay parámetro
+
+            // Definir los enlaces de MediaFire según el formulario
+            const mediaFireLinks = {
+                '1': 'https://www.mediafire.com/folder/nq6o3e1ak3pbe/GUIFORMAT', // GUIFORMAT
+                '2': 'https://www.mediafire.com/folder/wk4sdkt7721nr/H2TESTW', // H2TESTW
+                '3': 'https://www.mediafire.com/folder/cz7onqvq127s8/HDDLLF', // HDDLLF
+                '4': 'https://www.mediafire.com/folder/8ogmifi13v5gv/RMP', // RMP
+                '5': 'https://www.mediafire.com/folder/56xpgovnot6tr/EliminarHack', // ELIMINAR HACK
+                '6': 'https://www.mediafire.com/folder/koab9l7nchp1h/MemoryPit', // MEMORYPIT
+                '7': 'https://www.mediafire.com/folder/384b15bodytmy/NAND', // NAND
+                '8': 'https://www.mediafire.com/folder/8u4bkclvs1076/Stylehax', // STYLEHAX                
+                '9': 'https://www.mediafire.com/folder/2vq288dapxepd/Online',  // ONLINE
+                '5': '' // Empty
+            };
+
+            // Seleccionar el enlace de MediaFire según el formulario
+            const mediaFireUrl = mediaFireLinks[formId] || mediaFireLinks['1'];
+
+            // Abrir la pestaña de MediaFire
+            let mediaFireWindow = null;
+
+            try {
+                mediaFireWindow = window.open(mediaFireUrl, '_blank');
+                // Intentar cerrar la ventana actual inmediatamente después de abrir la nueva pestaña
+                try {
+                    window.close();
+                } catch (e) {
+                    console.error('Error al cerrar la ventana principal:', e);
+                    document.body.innerHTML = "<p>Redirección completa. Puedes cerrar esta pestaña manualmente.</p>";
+                }
+            } catch (e) {
+                console.error('Error al abrir la ventana de MediaFire:', e);
+                document.body.innerHTML = "<p>Error: No se pudo abrir la pestaña de MediaFire. Desactiva el bloqueador de pop-ups y actualiza la página.</p>";
+                return;
+            }
+        }
+
+        // Ejecutar al cargar la página
+        window.onload = abrirYcerrar;
+    </script>
+</head>
+<body>
+    <p>Redirigiendo... Si la pestaña no se abre, desactiva el bloqueador de pop-ups y actualiza la página.</p>
+</body>
+</html>
