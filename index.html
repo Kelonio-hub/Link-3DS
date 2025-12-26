@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Content | Kelonio Hub</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Web.png">
+
+<style>
+:root{
+  --glass-bg: rgba(20,20,20,.65);
+  --glass-border: rgba(255,255,255,.15);
+  --green: #00ff88;
+  --red: #ff2b2b;
+}
+
+*{box-sizing:border-box}
+
+body{
+  min-height: 100vh;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url('https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Fondo.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ================= CONTAINER ================= */
+.container{
+  width: 95%;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 30px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+}
+
+/* ================= TEXT + IMAGE ================= */
+.text-image-container{
+  display:flex;
+  justify-content: space-between;
+  align-items:flex-start;
+  gap:20px;
+  width:100%;
+}
+
+.text-section p{
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:20px;
+  text-shadow:0 0 18px rgba(0,255,136,.4);
+}
+
+.note{
+  font-size:15px;
+  line-height:1.6;
+  opacity:.85;
+}
+
+#consoleImageContainer {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100px;
+    flex-shrink: 0;
+    justify-content: flex-start;
+}
+
+#consoleImageContainer img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* ================= BUTTONS ================= */
+.button-section{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:15px;
+}
+
+button{
+  padding:16px;
+  font-size:18px;
+  font-weight:800;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  background:var(--red);
+  color:#ffffff;
+  box-shadow:0 0 20px rgba(255,0,0,.5);
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 0 30px rgba(255,0,0,.8);
+}
+
+.continue-button button{
+  background:var(--green);
+  box-shadow:0 0 25px rgba(0,255,136,.6);
+}
+
+/* ================= CONSOLES + SEARCH ================= */
+.console-search-container{
+  grid-column:1/-1;
+  display:flex;
+  gap:15px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.console-selector{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.console-button{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 18px;
+  background:rgba(255,255,255,.08);
+  border-radius:16px;
+  border:1px solid var(--glass-border);
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.console-button img{
+  width:32px;
+  height:32px;
+}
+
+.console-button:hover{
+  transform:translateY(-3px);
+  background:rgba(0,255,136,.15);
+  box-shadow:0 0 15px rgba(0,255,136,.4);
+}
+
+.search-bar{
+  flex:1;
+}
+
+.search-bar input{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid var(--glass-border);
+  background: rgba(0,0,0,.3);
+  color:#fff;
+  font-size:16px;
+}
+
+.search-bar input::placeholder{
+  color: rgba(255,255,255,.6);
+}
+
+/* ================= FILES ================= */
+.files-section{
+  grid-column:1/-1;
+  display:none;
+  flex-direction:column;
+  gap:18px;
+  margin-top:20px;
+  max-height:400px;
+  overflow-y:auto;
+  padding-right:5px;
+}
+
+.file-card{
+  background:rgba(255,255,255,.06);
+  border-radius:14px;
+  padding:10px;
+  text-align:center;
+  cursor:pointer;
+  border:2px solid transparent;
+  transition:.25s;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.file-card img{
+  width:150px;  
+  height:84px;  
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.file-card:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.12);
+}
+
+.file-card.selected{
+  border-color:var(--green);
+  box-shadow:0 0 15px rgba(0,255,136,.6);
+}
+
+/* ================= LOADING ================= */
+#loading{
+  display:none;
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--green);
+  font-weight:800;
+  text-shadow:0 0 12px rgba(0,255,136,.6);
+}
+
+/* ================= SOCIAL ================= */
+.social-floating{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:3000;
+}
+
+.social-floating a{
+  width:52px;
+  height:52px;
+  background:rgba(0,0,0,.75);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid var(--glass-border);
+  transition:.3s;
+}
+
+.social-floating a:hover{
+  transform:scale(1.12);
+  box-shadow:0 0 15px rgba(255,255,255,.3);
+}
+
+.social-floating img{
+  width:24px;
+  height:24px;
+}
+
+/* ================= LANGUAGE ================= */
+.language-selector{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+}
+
+.language-selector select{
+  padding:6px 10px;
+  background:rgba(0,0,0,.8);
+  color:#fff;
+  border-radius:8px;
+  border:1px solid var(--glass-border);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .container{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .text-image-container{
+    flex-direction:column;
+    align-items:center;
+  }
+  #consoleImageContainer{
+    width:150px;
+  }
+  .console-search-container{
+    flex-direction:column;
+    align-items:center;
+  }
+  .search-bar{
+    width:100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- Texto + imagen consola -->
+  <div class="text-image-container">
+    <div class="text-section" id="textSection">
+      <p id="mainText">Subscribe to access content!</p>
+      <div class="note" id="instructions">
+        1. Click the subscribe button.<br>
+        2. Confirm on YouTube.<br>
+        3. Wait for verification.<br>
+        4. Select console and files.
+      </div>
+    </div>
+    <div id="consoleImageContainer"></div>
+  </div>
+
+  <!-- Botones -->
+  <div class="button-section" id="buttonContainer">
+    <button id="subscribeBtn">Subscribe</button>
+    <div class="continue-button" style="display:none;">
+      <button id="continueBtn">Continue</button>
+    </div>
+  </div>
+
+  <!-- Consolas + búsqueda -->
+  <div class="console-search-container" id="consoleSearchContainer" style="display:none;">
+    <div class="console-selector" id="consoleSelector"></div>
+    <div class="search-bar">
+      <input type="text" id="fileSearch" placeholder="Search files...">
+    </div>
+  </div>
+
+  <!-- Archivos / Productos -->
+  <div class="files-section" id="filesSection"></div>
+</div>
+
+<div id="loading">Processing...</div>
+
+<!-- SOCIAL -->
+<div class="social-floating">
+  <a href="https://discord.gg/8Fv8GDg" target="_blank"><img src="https://images.icon-icons.com/3053/PNG/512/discord_macos_bigsur_icon_190238.png"></a>
+  <a href="https://discord.com/invite/xHg7XaYJvK" target="_blank"><img src="https://images.icon-icons.com/3053/PNG/512/discord_macos_bigsur_icon_190238.png"></a>
+  <a href="https://x.com/Kelonio3DS" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png"></a>
+  <a href="https://github.com/Kelonio-hub" target="_blank"><img src="https://github.githubassets.com/favicons/favicon-dark.png"></a>
+  <a href="https://ko-fi.com/lapresa" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ko-fi-icon.png"></a>
+  <a href="https://ko-fi.com/wiide" target="_blank"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/ko-fi-icon.png"></a>
+</div>
+
+<!-- LANGUAGE -->
+<div class="language-selector">
+  <select id="language-select" onchange="cambiarIdioma(this.value)">
+    <option value="en" selected>English</option>
+    <option value="es">Español</option>
+  </select>
+</div>
+
+<script>
+const translations = {
+  en:{ mainText:"Subscribe to access content!", instructions:"1. Click the subscribe button.<br>2. Confirm subscription on YouTube.<br>3. Wait until the subscription is verified.<br>4. Select the console and the files you want to download.", subscribe:"Subscribe", continue:"Continue", processing:"Processing, please wait...", searchPlaceholder:"Search files..." },
+  es:{ mainText:"¡Suscríbete para acceder al contenido!", instructions:"1. Haz clic en el botón de suscripción.<br>2. Confirma la suscripción en YouTube.<br>3. Espera hasta que se verifique la suscripción.<br>4. Selecciona la consola y los archivos que deseas descargar.", subscribe:"Suscribirse", continue:"Continuar", processing:"Procesando, por favor espera...", searchPlaceholder:"Buscar archivos..." }
+};
+let idiomaActual='en';
+
+const subscribeBtn=document.getElementById('subscribeBtn');
+const continueBtn=document.getElementById('continueBtn');
+const mainText=document.getElementById('mainText');
+const instructions=document.getElementById('instructions');
+const loading=document.getElementById('loading');
+const consoleSelector=document.getElementById('consoleSelector');
+const filesSection=document.getElementById('filesSection');
+const fileSearchInput=document.getElementById('fileSearch');
+const consoleImageContainer=document.getElementById('consoleImageContainer');
+
+function cambiarIdioma(lang){
+    idiomaActual=lang;
+    mainText.innerHTML=translations[lang].mainText;
+    instructions.innerHTML=translations[lang].instructions;
+    subscribeBtn.innerText=translations[lang].subscribe;
+    continueBtn.innerText=translations[lang].continue;
+    fileSearchInput.placeholder=translations[lang].searchPlaceholder;
+    if(loading.style.display!=='none') loading.innerText=translations[lang].processing;
+}
+
+cambiarIdioma('en');
+
+// =================== CONSOLES ===================
+const consoles=['switch','nds','3ds','wii','SD',];
+const consoleIcons={
+  'switch':'https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Switch.png',
+  '3ds':'https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%203DS.png',
+  'nds':'https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20NDS.png',
+  'wii':['https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Wii.png','https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Wii%20Mini.png','https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20WiiU.png'],
+  'SD':'https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20SD.png'
+};
+
+// Archivos de todas las consolas
+const mediaFiles = {
+      // SWITCH
+      'switch': [
+        {id:'1', videoId:'', label:{en:"File: Semibrick Switch", es:"Archivo: Semibrick Switch"}, url:'https://www.mediafire.com/folder/yzwqlf4xqn8bc/Semibrick'},
+        {id:'2', videoId:'', label:{en:"File: SWITCH Cambiar SD", es:"Archivo: SWITCH Cambiar SD"}, url:'https://www.mediafire.com/folder/icaakl7n60ptn/SWITCH+Cambiar+SD'},
+        {id:'3', videoId:'', label:{en:"File: Checkpoint", es:"Archivo: Checkpoint"}, url:'https://www.mediafire.com/folder/sijc0y4aifdi7/Checkpoint'},
+        {id:'4', videoId:'', label:{en:"File: DBI", es:"Archivo: DBI"}, url:'https://www.mediafire.com/folder/47k10pw9b5hsm/DBI'},
+        {id:'5', videoId:'', label:{en:"File: Ebook", es:"Archivo: Ebook"}, url:'https://www.mediafire.com/folder/egch0p46qjzey/Ebook'},
+        {id:'6', videoId:'', label:{en:"File: Tesla - Edizon", es:"Archivo: Tesla - Edizon"}, url:'https://www.mediafire.com/folder/6tkvnsj5b73j1/Tesla+-+Edizon'},
+        {id:'7', videoId:'', label:{en:"File: Tesla - Emuibo", es:"Archivo: Tesla - Emuibo"}, url:'https://www.mediafire.com/folder/n4fl15kgn7u81/Tesla+-+Emuibo'},
+        {id:'8', videoId:'', label:{en:"File: FTP", es:"Archivo: FTP"}, url:'https://www.mediafire.com/folder/xcv1pfxmj1s12/FTP'},
+        {id:'9', videoId:'', label:{en:"File: Pack Hacks", es:"Archivo: Pack Hacks"}, url:'https://www.mediafire.com/folder/cogxokg4rgcpp/Pack+Hacks'},
+        {id:'10', videoId:'', label:{en:"File: Jksv", es:"Archivo: Jksv"}, url:'https://www.mediafire.com/folder/wuu4emxwbobiy/Jksv'},
+        {id:'11', videoId:'', label:{en:"File: Lan-Play", es:"Archivo: Lan-Play"}, url:'https://www.mediafire.com/folder/g89x368gnabs8/Lan-Play'},
+        {id:'12', videoId:'', label:{en:"File: Mission control", es:"Archivo: Mission control"}, url:'https://www.mediafire.com/folder/3plsxegs4ke3t/Mission+control'},
+        {id:'13', videoId:'', label:{en:"File: SWITCH Modo Incógnito", es:"Archivo: SWITCH Modo Incógnito"}, url:'https://www.mediafire.com/folder/cbpvbdaaicqif/SWITCH+Modo+Incógnito'},
+        {id:'14', videoId:'', label:{en:"File: NXDUMPTOOL", es:"Archivo: NXDUMPTOOL"}, url:'https://www.mediafire.com/folder/tt60j41yqsb8a/NXDUMPTOOL'},
+        {id:'15', videoId:'', label:{en:"File: Nxthemes", es:"Archivo: Nxthemes"}, url:'https://www.mediafire.com/folder/o0x6y8cvay5lv/Nxthemes'},
+        {id:'16', videoId:'', label:{en:"File: HACK MARIKO - LITE", es:"Archivo: HACK MARIKO - LITE"}, url:'https://www.mediafire.com/folder/xb2widlsaza6u/HACK+MARIKO+-+LITE'},
+        {id:'17', videoId:'', label:{en:"File: Pkhex", es:"Archivo: Pkhex"}, url:'https://www.mediafire.com/folder/tlk8ihcikxxkb/Pkhex'},
+        {id:'18', videoId:'', label:{en:"File: Pplay", es:"Archivo: Pplay"}, url:'https://www.mediafire.com/folder/r35ofnnts1reb/Pplay'},
+        {id:'19', videoId:'', label:{en:"File: Rekado", es:"Archivo: Rekado"}, url:'https://www.mediafire.com/folder/3ojbit8stzhqx/Rekado'},
+        {id:'20', videoId:'', label:{en:"File: Tesla - Systune", es:"Archivo: Tesla - Systune"}, url:'https://www.mediafire.com/folder/3ijmiyy8xa171/Tesla+-+Systune'},
+        {id:'21', videoId:'', label:{en:"File: Tegra", es:"Archivo: Tegra"}, url:'https://www.mediafire.com/folder/9r0dpoy4dx1hq/Tegra'},
+        {id:'22', videoId:'', label:{en:"File: Tesla", es:"Archivo: Tesla"}, url:'https://www.mediafire.com/folder/9j2slv41991eo/Tesla'},
+        {id:'23', videoId:'', label:{en:"File: TEST MARIKO", es:"Archivo: TEST MARIKO"}, url:'https://www.mediafire.com/folder/qufccsnm54cyz/TEST+MARIKO'}
+      ],
+      // 3DS
+      '3ds': [
+        {id:'1', videoId:'', label:{en:"File: 3DS A CIA", es:"Archivo: 3DS A CIA"}, url:'https://www.mediafire.com/folder/v5ajkg685pv3d/3DS+A+CIA'},
+        {id:'2', videoId:'', label:{en:"File: 3DSX A CIA", es:"Archivo: 3DSX A CIA"}, url:'https://www.mediafire.com/folder/bhk7qkm3h3q8w/3DSX+A+CIA'},
+        {id:'3', videoId:'', label:{en:"File: A9LH A BOOT9", es:"Archivo: A9LH A BOOT9"}, url:'https://www.mediafire.com/folder/jfwm25wpndcmq/A9LH+A+BOOT9'},
+        {id:'4', videoId:'', label:{en:"File: ACT3DS-13.3.2", es:"Archivo: ACT3DS-13.3.2"}, url:'https://www.mediafire.com/folder/amnb6678bsyl4/ACT3DS-13.3.2'},
+        {id:'5', videoId:'', label:{en:"File: Anemone", es:"Archivo: Anemone"}, url:'https://www.mediafire.com/folder/rhd4xcgmrhwry/Anemone'},
+        {id:'6', videoId:'', label:{en:"File: BAX", es:"Archivo: BAX"}, url:'https://www.mediafire.com/folder/45imcjc6kz8r3/BAX'},
+        {id:'7', videoId:'', label:{en:"File: Beeshop", es:"Archivo: Beeshop"}, url:'https://www.mediafire.com/folder/kwzvcjuwcqyh0/Beeshop'},
+        {id:'8', videoId:'', label:{en:"File: Botones - Comprobar", es:"Archivo: Botones - Comprobar"}, url:'https://www.mediafire.com/folder/thjv7mmtxojiq/Botones+-+Comprobar'},
+        {id:'9', videoId:'', label:{en:"File: Checkpoint", es:"Archivo: Checkpoint"}, url:'https://www.mediafire.com/folder/56ngme6k652r5/Checkpoint'},
+        {id:'10', videoId:'', label:{en:"File: CIA A 3DS", es:"Archivo: CIA A 3DS"}, url:'https://www.mediafire.com/folder/kke89n2ub92u2/CIA+A+3DS'},
+        {id:'11', videoId:'', label:{en:"File: Crash Network", es:"Archivo: Crash Network"}, url:'https://www.mediafire.com/folder/m20yt1nr9r83d/Crash+Network'},
+        {id:'12', videoId:'', label:{en:"File: Custom-Install", es:"Archivo: Custom-Install"}, url:'https://www.mediafire.com/folder/cyk0r4kclllah/Custom-Install'},
+        {id:'13', videoId:'', label:{en:"File: DSP1", es:"Archivo: DSP1"}, url:'https://www.mediafire.com/folder/dkkh6ap9ggye9/DSP1'},
+        {id:'14', videoId:'', label:{en:"File: Deleted", es:"Archivo: Eliminado"}, url:''},
+        {id:'15', videoId:'', label:{en:"File: Faketik", es:"Archivo: Faketik"}, url:'https://www.mediafire.com/folder/0zt9r33vja6j5/Faketik'},
+        {id:'16', videoId:'', label:{en:"File: FBI-Inject", es:"Archivo: FBI-Inject"}, url:'https://www.mediafire.com/folder/ldz0g5ai1xfq9/FBI-Inject'},
+        {id:'17', videoId:'', label:{en:"File: FREAKYHAX", es:"Archivo: FREAKYHAX"}, url:'https://www.mediafire.com/folder/9xkkpcoa51lo3/FREAKYHAX'},
+        {id:'18', videoId:'', label:{en:"File: FTPD", es:"Archivo: FTPD"}, url:'https://www.mediafire.com/folder/kf75yszaldh2t/FTPD'},
+        {id:'19', videoId:'', label:{en:"File: JKSM", es:"Archivo: JKSM"}, url:'https://www.mediafire.com/folder/qwhiphqje9pu2/JKSM'},
+        {id:'20', videoId:'', label:{en:"File: KARTMINER7", es:"Archivo: KARTMINER7"}, url:'https://www.mediafire.com/folder/f3q1jzxxqfmza/KARTMINER7'},
+        {id:'21', videoId:'', label:{en:"File: KARTDLPHAX", es:"Archivo: KARTDLPHAX"}, url:'https://www.mediafire.com/folder/0xt2fp792njxy/KARTDLPHAX'},
+        {id:'22', videoId:'', label:{en:"File: LimePlayer3DS", es:"Archivo: LimePlayer3DS"}, url:'https://www.mediafire.com/folder/kehqp0k8jeb33/LimePlayer3DS'},
+        {id:'23', videoId:'', label:{en:"File: LOS3D", es:"Archivo: LOS3D"}, url:'https://www.mediafire.com/folder/my2byfq5f8wc9/LOS3D'},
+        {id:'24', videoId:'', label:{en:"File: Mandos PS3-4", es:"Archivo: Mandos PS3-4"}, url:'https://www.mediafire.com/folder/4o5890hs03vcv/Mandos+ps3-4'},
+        {id:'25', videoId:'', label:{en:"File: Menuhax67", es:"Archivo: Menuhax67"}, url:'https://www.mediafire.com/folder/b0f0cwse8ehom/Menuhax67'},
+        {id:'26', videoId:'', label:{en:"File: Movable Format", es:"Archivo: Movable Format"}, url:'https://www.mediafire.com/folder/e6vdyg8wh3zvt/Movable+Format'},
+        {id:'27', videoId:'', label:{en:"File: MSET9", es:"Archivo: MSET9"}, url:'https://www.mediafire.com/folder/w66tn7fmfedkt/MSET9'},
+        {id:'28', videoId:'', label:{en:"File: MUNDO POKÉMON", es:"Archivo: MUNDO POKÉMON"}, url:'https://www.mediafire.com/folder/f7nlpuxx74bbc/MUNDO+POKÉMON'},
+        {id:'29', videoId:'', label:{en:"File: NAND-REX", es:"Archivo: NAND-REX"}, url:'https://www.mediafire.com/folder/xz05bp0uardjo/NAND-REX'},
+        {id:'30', videoId:'', label:{en:"File: NINJHAX", es:"Archivo: NINJHAX"}, url:'https://www.mediafire.com/folder/julgldoln9bpq/NINJHAX'},
+        {id:'31', videoId:'', label:{en:"File: NTRBootSelector", es:"Archivo: NTRBootSelector"}, url:'https://www.mediafire.com/folder/limmurzf86jgf/NTRBootSelector'},
+        {id:'32', videoId:'', label:{en:"File: NTRBOOTHAX", es:"Archivo: NTRBOOTHAX"}, url:'https://www.mediafire.com/folder/kz04zhseec6xv/NTRBOOTHAX'},
+        {id:'33', videoId:'', label:{en:"File: Online - Pretendo", es:"Archivo: Online - Pretendo"}, url:'https://www.mediafire.com/folder/hbc59j4z5758q/Online+-+Pretendo'},
+        {id:'34', videoId:'', label:{en:"File: PCP", es:"Archivo: PCP"}, url:'https://www.mediafire.com/folder/rhdoro6ay4npl/PCP'},
+        {id:'35', videoId:'', label:{en:"File: RETRO A CIA", es:"Archivo: RETRO A CIA"}, url:'https://www.mediafire.com/folder/i81lqs1z56i0t/RETRO+A+CIA'},
+        {id:'36', videoId:'', label:{en:"File: Arreglar Cartuchos", es:"Archivo: Arreglar Cartuchos"}, url:'https://www.mediafire.com/folder/cft1snmezruhh/Arreglar+Cartuchos'},
+        {id:'37', videoId:'', label:{en:"File: SAFECERTHAX", es:"Archivo: SAFECERTHAX"}, url:'https://www.mediafire.com/folder/jtr2xnok55esm/SAFECERTHAX'},
+        {id:'38', videoId:'', label:{en:"File: SDLoader-GX", es:"Archivo: SDLoader-GX"}, url:'https://www.mediafire.com/folder/sbywp6mmubgyr/SDLoader-GX'},
+        {id:'39', videoId:'', label:{en:"File: SlotTool", es:"Archivo: SlotTool"}, url:'https://www.mediafire.com/folder/nmosl75asd6on/SlotTool'},
+        {id:'40', videoId:'', label:{en:"File: SUPERSKATER", es:"Archivo: SUPERSKATER"}, url:'https://www.mediafire.com/folder/58dr0nisioo3t/SUPERSKATER'},
+        {id:'41', videoId:'', label:{en:"File: SYSUPDATER", es:"Archivo: SYSUPDATER"}, url:'https://www.mediafire.com/folder/3gh029nhpx9hu/Sysupdater'},
+        {id:'42', videoId:'', label:{en:"File: Themely", es:"Archivo: Themely"}, url:'https://www.mediafire.com/folder/2sl0ilv9vsq2i/Themely'},
+        {id:'43', videoId:'', label:{en:"File: TikSweep", es:"Archivo: TikSweep"}, url:'https://www.mediafire.com/folder/rzjqxtucd9e1c/TikSweep'},
+        {id:'44', videoId:'', label:{en:"File: TinyFormat", es:"Archivo: TinyFormat"}, url:'https://www.mediafire.com/folder/2qrmkk04es3k1/TinyFormat'},
+        {id:'45', videoId:'', label:{en:"File: Titlerex", es:"Archivo: Titlerex"}, url:'https://www.mediafire.com/folder/2j8jct3zqid3c/Titlerex'},
+        {id:'46', videoId:'', label:{en:"File: TRIMEAR JUEGOS", es:"Archivo: TRIMEAR JUEGOS"}, url:'https://www.mediafire.com/folder/k2tyuakfma22o/TRIMEAR+JUEGOS'},
+        {id:'47', videoId:'', label:{en:"File: Youtube", es:"Archivo: Youtube"}, url:'https://www.mediafire.com/folder/qydjc55abxhd2/Youtube'},
+        {id:'48', videoId:'', label:{en:"File: Tuna_Videos", es:"Archivo: Tuna_Videos"}, url:'https://www.mediafire.com/folder/ti8l2it4b864f/Tuna_Videos'},
+        {id:'49', videoId:'', label:{en:"File: TWLmenu", es:"Archivo: TWLmenu"}, url:'https://www.mediafire.com/folder/mcc7anopqy80a/TWLmenu'},
+        {id:'50', videoId:'', label:{en:"File: TWLFix", es:"Archivo: TWLFix"}, url:'https://www.mediafire.com/folder/uvlryhaul8fpp/TWLFix'},
+        {id:'51', videoId:'', label:{en:"File: Universal", es:"Archivo: Universal"}, url:'https://www.mediafire.com/folder/3ww44qjpx2vpz/Universal'},
+        {id:'52', videoId:'', label:{en:"File: Godmode9 2.2.0", es:"Archivo: Godmode9 2.2.0"}, url:'https://www.mediafire.com/folder/v6k5t5r28uwsk/Godmode9+2.2.0'},
+        {id:'53', videoId:'', label:{en:"File: CTRNAND Archivos 11.15.0", es:"Archivo: CTRNAND Archivos 11.15.0"}, url:'https://www.mediafire.com/folder/z49rxmu8kqsun/CTRNAND+Archivos+11.15.0'},
+        {id:'54', videoId:'', label:{en:"File: SCRIPT CTRNAND v25.1", es:"Archivo: SCRIPT CTRNAND v25.1"}, url:'https://www.mediafire.com/folder/3qw73cb3bma7e/SCRIPT+CTRNAND+v25.1'},
+        {id:'55', videoId:'', label:{en:"File: SCRIPT CTRNAND-2", es:"Archivo: SCRIPT CTRNAND-2"}, url:'https://www.mediafire.com/folder/4ww5elj11unm0/SCRIPT+CTRNAND-2'},
+        {id:'56', videoId:'', label:{en:"File: SCRIPT BLACK LAZARUS v25.1", es:"Archivo: SCRIPT BLACK LAZARUS v25.1"}, url:'https://www.mediafire.com/folder/wfigzf3ti9mhb/SCRIPT+BLACK+LAZARUS+v25.1'},
+        {id:'57', videoId:'', label:{en:"File: SCRIPT BLUE LAZARUS", es:"Archivo: SCRIPT BLUE LAZARUS"}, url:'https://www.mediafire.com/folder/aw57qm6owltz1/SCRIPT+BLUE+LAZARUS'},
+        {id:'58', videoId:'', label:{en:"File: KERNEL R4", es:"Archivo: KERNEL R4"}, url:'https://n9.cl/en7r6j'},
+        {id:'59', videoId:'', label:{en:"File: SCRIPT ELIMINAR HACK", es:"Archivo: SCRIPT ELIMINAR HACK"}, url:'https://www.mediafire.com/folder/1yfs92z21v0vf/SCRIPT+ELIMINAR+HACK'}
+      ],
+      // NDS
+      'nds': [
+        {id:'1', videoId:'BaB_n_6PB48', label:{en:"File: Eliminar Hack", es:"Archivo: Eliminar Hack"}, url:'https://www.mediafire.com/folder/56xpgovnot6tr/EliminarHack'},
+        {id:'2', videoId:'9W0aODZAQXI', label:{en:"File: MemoryPit", es:"Archivo: MemoryPit"}, url:'https://www.mediafire.com/folder/koab9l7nchp1h/MemoryPit'},
+        {id:'3', videoId:'7EuuLsNVuW0', label:{en:"File: NAND", es:"Archivo: NAND"}, url:'https://www.mediafire.com/folder/384b15bodytmy/NAND'},
+        {id:'4', videoId:'d0dhk_sTm8g', label:{en:"File: Stylehax", es:"Archivo: Stylehax"}, url:'https://www.mediafire.com/folder/8u4bkclvs1076/Stylehax'},
+        {id:'5', videoId:'', label:{en:"File: Online", es:"Archivo: Online"}, url:'https://www.mediafire.com/folder/2vq288dapxepd/Online'}
+      ],
+      // WII/WII Mini/WiiU
+      'wii': [
+        {id:'1', videoId:'', label:{en:"File: Anytitle", es:"Archivo: Anytitle"}, url:'https://www.mediafire.com/folder/jlehq3auaz4mq/Anytitle'},
+        {id:'2', videoId:'', label:{en:"File: Bloquear Actualizaciones de Juegos", es:"Archivo: Bloquear Actualizaciones de Juegos"}, url:'https://www.mediafire.com/folder/5bhngj8aqjime/Bloquear+Actualizaciones+de+Juegos'},
+        {id:'3', videoId:'agG4IJkg9uk', label:{en:"File: CFG-Loader", es:"Archivo: CFG-Loader"}, url:'https://www.mediafire.com/folder/dv3y1mywbn2h3/CFG-Loader'},
+        {id:'4', videoId:'RJEdSmnJ2nc', label:{en:"File: CIOS", es:"Archivo: CIOS"}, url:'https://www.mediafire.com/folder/2d6pjwixys12f/CIOS'},
+        {id:'5', videoId:'6U-Mc-nPitU', label:{en:"File: Desmumewii", es:"Archivo: Desmumewii"}, url:'https://www.mediafire.com/folder/fqcrc37ixp8y8/Desmumewii'},
+        {id:'6', videoId:'', label:{en:"File: Convertir DOL a BIN y ELF", es:"Archivo: Convertir DOL a BIN y ELF"}, url:'https://www.mediafire.com/folder/867fxol6tyhhy/Convertir+DOL+a+BIN+y+ELF'},
+        {id:'7', videoId:'', label:{en:"File: Convertir DVD a ISO", es:"Archivo: Convertir DVD a ISO"}, url:'https://www.mediafire.com/folder/hgw84k6laxavr/Convertir+DVD+a+ISO'},
+        {id:'8', videoId:'MQ6GjU_vtuA', label:{en:"File: WII WIIBRAND", es:"Archivo: WII WIIBRAND"}, url:'https://www.mediafire.com/folder/7u3b2luagtnwg/WII+WIIBRAND'},
+        {id:'9', videoId:'', label:{en:"File: HackMii", es:"Archivo: HackMii"}, url:'https://www.mediafire.com/folder/jfpo4q4fwqluk/HackMii'},
+        {id:'10', videoId:'', label:{en:"File: Convertir ISO a WBFS", es:"Archivo: Convertir ISO a WBFS"}, url:'https://www.mediafire.com/folder/b0cbhaohir8dc/Convertir+ISO+A+WBFS'},
+        {id:'11', videoId:'nxtm5D2W5uY', label:{en:"File: mGBA", es:"Archivo: mGBA"}, url:'https://www.mediafire.com/folder/lfiu075uyteqo/mGBA'},
+        {id:'12', videoId:'8Z0v_bcwWZ4', label:{en:"File: Nintendont", es:"Archivo: Nintendont"}, url:'https://www.mediafire.com/folder/eg7qv1wd5u09k/Nintendont'},
+        {id:'13', videoId:'KcECUBXV0dk', label:{en:"File: Not64", es:"Archivo: Not64"}, url:'https://www.mediafire.com/folder/9urfytbrtepsy/Not64'},
+        {id:'14', videoId:'', label:{en:"File: Online", es:"Archivo: Online"}, url:'https://www.mediafire.com/folder/xi7zy3t8hkl4c/Online'},
+        {id:'15', videoId:'4OlP0CLJdGY', label:{en:"File: Priiloader", es:"Archivo: Priiloader"}, url:'https://www.mediafire.com/folder/qym3tf9fs2zum/Priiloader'},
+        {id:'16', videoId:'', label:{en:"File: Cambiar Archivo a Región Libre", es:"Archivo: Cambiar Archivo a Región Libre"}, url:'https://www.mediafire.com/folder/8l2saq2mbw2di/Cambiar+Archivo+a+Región+Libre'},
+        {id:'17', videoId:'', label:{en:"File: Retroarch", es:"Archivo: Retroarch"}, url:'https://www.mediafire.com/folder/6z0ctrxwv4l7q/Retroarch'},
+        {id:'18', videoId:'', label:{en:"File: SysckeckMe", es:"Archivo: SysckeckMe"}, url:'https://www.mediafire.com/folder/jzu9jtimupx90/SysckeckMe'},
+        {id:'19', videoId:'', label:{en:"File: Trimear Capacidad Archivo DOL", es:"Archivo: Trimear Capacidad Archivo DOL"}, url:'https://www.mediafire.com/folder/xcewwn4tdy6ig/Trimear+Capacidad+Archivo+DOL'},
+        {id:'20', videoId:'LgRAWhxUtIE', label:{en:"File: USBLoader-GX", es:"Archivo: USBLoader-GX"}, url:'https://www.mediafire.com/folder/1vc3xdb7ejqws/USBLoader-GX'},
+        {id:'21', videoId:'B1lPa89JLnc', label:{en:"File: WiiFlow", es:"Archivo: WiiFlow"}, url:'https://www.mediafire.com/folder/ygeigdgb7qj1m/WiiFlow'},
+        {id:'22', videoId:'jr3mB0U_eAs', label:{en:"File: WiiStation", es:"Archivo: WiiStation"}, url:'https://www.mediafire.com/folder/c852w0u98697b/WiiStation'},
+        {id:'23', videoId:'', label:{en:"File: Yawm", es:"Archivo: Yawm"}, url:'https://www.mediafire.com/folder/535rtpt3hqiej/Yawm'},
+        {id:'24', videoId:'1clOkDVWhoQ', label:{en:"File: WII MINI BLUEBOMB", es:"Archivo: WII MINI BLUEBOMB"}, url:'https://www.mediafire.com/folder/v8ri4br41i89i/WII+MINI+BLUEBOMB'},
+        {id:'25', videoId:'ZnkHeuM5Pd0', label:{en:"File: WIIU CFW-DUAL", es:"Archivo: WIIU CFW-DUAL"}, url:'https://www.mediafire.com/folder/dezv235ha2gfu/WIIU+CFW-DUAL'},
+        {id:'26', videoId:'EdRX5HB0-xs', label:{en:"File: vWII COMPAT", es:"Archivo: vWII COMPAT"}, url:'https://www.mediafire.com/folder/afovkrhu9wa0k/vWII+COMPAT'},
+        {id:'27', videoId:'', label:{en:"File: NAND", es:"Archivo: NAND"}, url:'https://www.mediafire.com/folder/4z1rto7ytsk7w/NAND'},
+        {id:'28', videoId:'', label:{en:"File: Eliminar Mocha", es:"Archivo: Eliminar Mocha"}, url:'https://www.mediafire.com/folder/fj8lvekydx5ip/Eliminar+Mocha'},
+        {id:'29', videoId:'', label:{en:"File: Pack Arranque", es:"Archivo: Pack Arranque"}, url:'https://www.mediafire.com/folder/b9h1awh4yk1mb/Pack+Arranque'},
+        {id:'30', videoId:'', label:{en:"File: FTP", es:"Archivo: FTP"}, url:'https://www.mediafire.com/folder/to458ox1hzgpt/FTP'},
+        {id:'31', videoId:'', label:{en:"File: WupInstaller", es:"Archivo: WupInstaller"}, url:'https://www.mediafire.com/folder/g5ttliqzz20sh/WupInstaller'},
+        {id:'32', videoId:'', label:{en:"File: Online", es:"Archivo: Online"}, url:'https://www.mediafire.com/folder/2ij528g6obtzn/Online'},
+        {id:'33', videoId:'', label:{en:"File: Pack Arranque", es:"Archivo: Pack Arranque"}, url:'https://www.mediafire.com/folder/b9h1awh4yk1mb/Pack+Arranque'},
+        {id:'34', videoId:'', label:{en:"File: TECONMOON", es:"Archivo: TECONMOON"}, url:'https://www.mediafire.com/folder/eljwx0sxxxa2e/TECONMOON'}
+      ],
+      // SD
+      'SD': [
+        {id:'1', videoId:'CqrJ3fdQaP8', label:{en:"File: GUIFORMAT", es:"Archivo: GUIFORMAT"}, url:'https://www.mediafire.com/folder/nq6o3e1ak3pbe/GUIFORMAT'},
+        {id:'2', videoId:'KjQJyIqa-lE', label:{en:"File: H2testw", es:"Archivo: H2TESTW"}, url:'https://www.mediafire.com/folder/wk4sdkt7721nr/H2TESTW'},
+        {id:'3', videoId:'EKVQyQ8PGfc', label:{en:"File: HDDLLF", es:"Archivo: HDDLLF"}, url:'https://www.mediafire.com/folder/cz7onqvq127s8/HDDLLF'},
+        {id:'4', videoId:'jBmMYJbEwKM', label:{en:"File: RMP", es:"Archivo: RMP"}, url:'https://www.mediafire.com/folder/8ogmifi13v5gv/RMP'}
+      ]
+    };
+    
+
+// =================== AMAZON PRODUCTS ===================
+const amazonProducts = [
+/* ===================== NINTENDO SWITCH ===================== */
+{id:'1', label:{en:"RCM Jig", es:"RCM"}, img:"https://m.media-amazon.com/images/I/61-PblYntsL._AC_SL1500_.jpg", url:"https://amzn.to/3Tk0OSw"},
+{id:'2', label:{en:"USB-C Cable", es:"Cable USB C"}, img:"https://m.media-amazon.com/images/I/71l1pG9ZxaL._AC_SL1500_.jpg", url:"https://amzn.to/3RDOzzh"},
+{id:'3', label:{en:"Joy-Con Controller", es:"Joy-Con"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/3RCe2sH"},
+{id:'4', label:{en:"Joy-Con Charger", es:"Cargador Joy-Con"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/3NmPmCa"},
+{id:'5', label:{en:"Joy-Con Steering Wheel", es:"Volante Joy-Con"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/3Tqf4cN"},
+{id:'6', label:{en:"Joy-Con Kit Pack", es:"Kit-Pack Joy-Con"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/3NmLmBt"},
+{id:'7', label:{en:"Pro Controller", es:"Mando Pro"}, img:"https://m.media-amazon.com/images/I/61dYFzM4lLL._AC_SL1500_.jpg", url:"https://amzn.to/46O2jM9"},
+{id:'8', label:{en:"GameCube Controller", es:"Mando GameCube"}, img:"https://m.media-amazon.com/images/I/61pWZ2Z5YlL._AC_SL1500_.jpg", url:"https://amzn.to/3ThYY4I"},
+{id:'9', label:{en:"GameCube Adapter", es:"Adaptador GameCube"}, img:"https://m.media-amazon.com/images/I/61pWZ2Z5YlL._AC_SL1500_.jpg", url:"https://amzn.to/3RjYBE1"},
+{id:'10', label:{en:"Game Case", es:"Estuche Juegos"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/3RlmPhg"},
+{id:'11', label:{en:"Console Case", es:"Funda Consola"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/3NmEIuU"},
+{id:'12', label:{en:"Screen Protector Erista", es:"Cristal Erista"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/4adosGu"},
+{id:'13', label:{en:"Screen Protector Lite", es:"Cristal Lite"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/46QoHnX"},
+{id:'14', label:{en:"Screen Protector OLED", es:"Cristal OLED"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/3t4Xnon"},
+{id:'15', label:{en:"Shell Erista", es:"Carcasa Erista"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/41lLO90"},
+{id:'16', label:{en:"Shell Lite", es:"Carcasa Lite"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/41jXN6S"},
+{id:'17', label:{en:"Shell OLED", es:"Carcasa OLED"}, img:"https://m.media-amazon.com/images/I/61n6Wm1cRXL._AC_SL1500_.jpg", url:"https://amzn.to/3RlD0Lo"},
+{id:'18', label:{en:"Switch Charger", es:"Cargador Switch"}, img:"https://m.media-amazon.com/images/I/61dYFzM4lLL._AC_SL1500_.jpg", url:"https://amzn.to/46ZhDW1"},
+
+/* ===================== NINTENDO 3DS ===================== */
+{id:'19', label:{en:"New 3DS Joypad", es:"Joypad N3DS"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/3TiJrS8"},
+{id:'20', label:{en:"New 3DS XL Joypad", es:"Joypad N3DS XL"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/3GF1t9E"},
+{id:'21', label:{en:"2DS XL Joypad", es:"Joypad N2DS XL"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/3NidLIH"},
+{id:'22', label:{en:"Old 3DS Screen Protector", es:"Cristal O3DS"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/479oL2x"},
+{id:'23', label:{en:"Old 2DS Screen Protector", es:"Cristal O2DS"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/41p5k4s"},
+{id:'24', label:{en:"Old 3DS XL Screen Protector", es:"Cristal O3DS XL"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/3RD966Q"},
+{id:'25', label:{en:"New 3DS Screen Protector", es:"Cristal N3DS"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/41j9fzF"},
+{id:'26', label:{en:"New 3DS XL Screen Protector", es:"Cristal N3DS XL"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/46VyYzp"},
+{id:'27', label:{en:"New 2DS XL Screen Protector", es:"Cristal N2DS XL"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/46TBi9V"},
+{id:'28', label:{en:"3DS Charger", es:"Cargador 3DS"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/3RBT1hE"},
+{id:'29', label:{en:"3DS Console Case", es:"Funda Consola"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/3TgvC6V"},
+{id:'30', label:{en:"3DS Game Case", es:"Funda Juegos"}, img:"https://m.media-amazon.com/images/I/71hFzFf0-LL._AC_SL1500_.jpg", url:"https://amzn.to/4gD5Vpp"},
+
+/* ===================== NINTENDO DS ===================== */
+{id:'31', label:{en:"NDS Shell", es:"Carcasa NDS"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3tfup5e"},
+{id:'32', label:{en:"NDSi Shell", es:"Carcasa NDSi"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3RDsFMv"},
+{id:'33', label:{en:"NDSi XL Shell", es:"Carcasa NDSi XL"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/47Q3SKQ"},
+{id:'34', label:{en:"NDS Screen Protector", es:"Protector NDS"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/48bPA6P"},
+{id:'35', label:{en:"NDSi Screen Protector", es:"Protector NDSi"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/46ZnNFD"},
+{id:'36', label:{en:"NDSi XL Screen Protector", es:"Protector NDSi XL"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3teEU8J"},
+
+/* ===================== ALMACENAMIENTO ===================== */
+{id:'37', label:{en:"SD Card 16GB", es:"SD 16GB"}, img:"https://m.media-amazon.com/images/I/81SDSD.jpg", url:"https://amzn.to/3BflBwO"},
+{id:'38', label:{en:"SD Card 32GB", es:"SD 32GB"}, img:"https://m.media-amazon.com/images/I/81SDSD.jpg", url:"https://amzn.to/3UqdkyU"},
+{id:'39', label:{en:"SD Card 64GB", es:"SD 64GB"}, img:"https://m.media-amazon.com/images/I/81SDSD.jpg", url:"https://amzn.to/3LlkTTl"},
+{id:'40', label:{en:"SD Card 128GB", es:"SD 128GB"}, img:"https://m.media-amazon.com/images/I/81SDSD.jpg", url:"https://amzn.to/3zCCMdP"},
+{id:'41', label:{en:"SD Card 256GB", es:"SD 256GB"}, img:"https://m.media-amazon.com/images/I/81SDSD.jpg", url:"https://amzn.to/4cGcMwE"},
+
+/* ===================== USB ===================== */
+{id:'42', label:{en:"USB 16GB", es:"USB 16GB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/3xEfoMj"},
+{id:'43', label:{en:"USB 32GB", es:"USB 32GB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/3L5i7le"},
+{id:'44', label:{en:"USB 64GB", es:"USB 64GB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/3XFwrIA"},
+{id:'45', label:{en:"USB 128GB", es:"USB 128GB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/3W0Kg34"},
+{id:'46', label:{en:"USB 256GB", es:"USB 256GB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/4cKvX8r"},
+{id:'47', label:{en:"USB 512GB", es:"USB 512GB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/3VJA25F"},
+{id:'48', label:{en:"USB 1TB", es:"USB 1TB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/4cGsgAC"},
+{id:'49', label:{en:"USB 2TB", es:"USB 2TB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/4cn7pm7"},
+{id:'50', label:{en:"USB 4TB", es:"USB 4TB"}, img:"https://m.media-amazon.com/images/I/81USB.jpg", url:"https://amzn.to/4cEc8iU"},
+
+// ===================== NINTENDO WII & WII U =====================
+{id:'51', label:{en:"Wii Remote Controller", es:"Mando Wii"}, img:"https://m.media-amazon.com/images/I/81U4jPJG4DL._AC_SL1500_.jpg", url:"https://amzn.to/4iEDjOf"},
+{id:'52', label:{en:"Battery for Wii Controller", es:"Batería Mando"}, img:"https://m.media-amazon.com/images/I/61dYFzM4lLL._AC_SL1500_.jpg", url:"https://amzn.to/3TtfC1d"},
+{id:'53', label:{en:"Battery Support Stand", es:"Soporte Baterías"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3NycOfD"},
+{id:'54', label:{en:"GameCube Controller Adapter", es:"Adaptador GameCube"}, img:"https://m.media-amazon.com/images/I/61pWZ2Z5YlL._AC_SL1500_.jpg", url:"https://amzn.to/3Bob9GO"},
+{id:'55', label:{en:"GameCube to USB Adapter", es:"Adaptador GameCube-USB"}, img:"https://m.media-amazon.com/images/I/61pWZ2Z5YlL._AC_SL1500_.jpg", url:"https://amzn.to/4gFYLR9"},
+{id:'56', label:{en:"GameCube Adapter (Alt)", es:"Adaptador GameCube (Alt)"}, img:"https://m.media-amazon.com/images/I/61pWZ2Z5YlL._AC_SL1500_.jpg", url:"https://amzn.to/4flbIir"},
+{id:'57', label:{en:"Memory Card for GameCube", es:"Memory Card GC"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/4agU79Y"},
+{id:'58', label:{en:"Steering Wheel", es:"Volante"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/46U01uE"},
+{id:'59', label:{en:"Wii Fit Board", es:"Wii Fit"}, img:"https://m.media-amazon.com/images/I/81U4jPJG4DL._AC_SL1500_.jpg", url:"https://amzn.to/3RBKgUP"},
+{id:'60', label:{en:"Dance Pad", es:"Pista Baile"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/41kgneV"},
+{id:'61', label:{en:"Guitar Controller", es:"Guitarra"}, img:"https://m.media-amazon.com/images/I/61k0aXyKJ-L._AC_SL1500_.jpg", url:"https://amzn.to/3RBNSWV"},
+{id:'62', label:{en:"Wii Microphone", es:"Micrófono"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3tbPai8"},
+{id:'63', label:{en:"Wii Speaker", es:"Altavoz"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3NAp7Ij"},
+{id:'64', label:{en:"Sensor Bar", es:"Barra Sensor"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/4amnLuB"},
+{id:'65', label:{en:"Wii Stand", es:"Soporte Wii"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3Nv6mWG"},
+{id:'66', label:{en:"Wii U Stand", es:"Soporte Wii U"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/47izOqd"},
+{id:'67', label:{en:"Wii U Pro Screen", es:"Pantalla Pro. Wii U"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3Rauyic"},
+{id:'68', label:{en:"Wii U Pro Case", es:"Carcasa Pro. Wii U"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/41jSnZJ"},
+{id:'69', label:{en:"Wii U Pro Shell", es:"Funda Pro. Wii U"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/47RAvru"},
+{id:'70', label:{en:"Wii Charger", es:"Cargador Wii"}, img:"https://m.media-amazon.com/images/I/61dYFzM4lLL._AC_SL1500_.jpg", url:"https://amzn.to/4fCRtgt"},
+{id:'71', label:{en:"Wii U Charger", es:"Cargador Wii U"}, img:"https://m.media-amazon.com/images/I/61dYFzM4lLL._AC_SL1500_.jpg", url:"https://amzn.to/3RMVp5A"},
+{id:'72', label:{en:"PAD Charger", es:"Cargador PAD"}, img:"https://m.media-amazon.com/images/I/61dYFzM4lLL._AC_SL1500_.jpg", url:"https://amzn.to/3OWMX1p"},
+{id:'73', label:{en:"Y-Cable for Wii U", es:"Cable Y - Wii U"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3zDweMb"},
+{id:'74', label:{en:"HDMI Adapter Cable", es:"Cable Adap. HDMI"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3DfjLA6"},
+{id:'75', label:{en:"Video Capture Device", es:"Video Capturadora"}, img:"https://m.media-amazon.com/images/I/71nDS.jpg", url:"https://amzn.to/3TtLQcJ"},
+
+];
+
+
+// =================== SUBSCRIBE ===================
+subscribeBtn.addEventListener('click',()=>{
+  window.open('https://www.youtube.com/channel/UCJbYmHLNcrPUUA9oyBGtsKw?sub_confirmation=1','_blank');
+  setTimeout(()=>{
+    subscribeBtn.style.display='none';
+    document.getElementById('consoleSearchContainer').style.display='flex';
+    
+    // Consolas
+    consoles.forEach(c=>{
+      const btn=document.createElement('div');
+      btn.className='console-button';
+      if(c==='wii'){ 
+        btn.innerHTML=`<img src="${consoleIcons[c][0]}"> ${c.toUpperCase()}`; 
+      } else { 
+        btn.innerHTML=`<img src="${consoleIcons[c]}"> ${c.toUpperCase()}`; 
+      }
+      btn.onclick=()=>mostrarArchivos(c);
+      consoleSelector.appendChild(btn);
+    });
+
+    // Botón Amazon
+    const amazonBtn=document.createElement('div');
+    amazonBtn.className='console-button';
+    amazonBtn.innerHTML=`<img src="https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20productos.png"> AMAZON`;
+    amazonBtn.onclick=()=>mostrarAmazon();
+    consoleSelector.appendChild(amazonBtn);
+
+  },60000);
+});
+
+// =================== MOSTRAR ARCHIVOS ===================
+function mostrarArchivos(consoleName){
+    filesSection.innerHTML='';
+    filesSection.style.display='flex';
+    consoleImageContainer.innerHTML='';
+
+    const img = document.createElement('img');
+    if(consoleName==='wii'){ img.src = consoleIcons['wii'][0]; }
+    else img.src = consoleIcons[consoleName];
+    img.style.width='120px';
+    consoleImageContainer.appendChild(img);
+
+    mediaFiles[consoleName].forEach(f=>{
+        const card=document.createElement('div');
+        card.className='file-card';
+        card.dataset.url=f.url;
+        const thumbnail='https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Zip.png';
+        card.innerHTML=`<img src="${thumbnail}"><br>${f.label[idiomaActual]}`;
+        card.onclick=()=>window.open(f.url,'_blank');
+        filesSection.appendChild(card);
+    });
+}
+
+// =================== MOSTRAR AMAZON ===================
+function mostrarAmazon(){
+    filesSection.innerHTML='';
+    filesSection.style.display='flex';
+    consoleImageContainer.innerHTML='';
+
+    const img=document.createElement('img');
+    img.src="https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20productos.png";
+    img.style.width='120px';
+    consoleImageContainer.appendChild(img);
+
+    amazonProducts.forEach(p=>{
+        const card=document.createElement('div');
+        card.className='file-card';
+        card.dataset.url=p.url;
+        card.innerHTML=`<img src="${p.img}"><br>${p.label[idiomaActual]}`;
+        card.onclick=()=>window.open(p.url,'_blank');
+        filesSection.appendChild(card);
+    });
+}
+
+// =================== BÚSQUEDA ===================
+fileSearchInput.addEventListener('input',()=>{
+    const query=fileSearchInput.value.toLowerCase();
+    filesSection.innerHTML='';
+    filesSection.style.display=query?'flex':'none';
+    if(!query) return;
+
+    const allItems=[...Object.values(mediaFiles).flat(), ...amazonProducts];
+    allItems.forEach(f=>{
+        if(f.label[idiomaActual].toLowerCase().includes(query)){
+            const card=document.createElement('div');
+            card.className='file-card';
+            card.dataset.url=f.url;
+            const thumbnail=f.img||'https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Zip.png';
+            card.innerHTML=`<img src="${thumbnail}"><br>${f.label[idiomaActual]}`;
+            card.onclick=()=>window.open(f.url,'_blank');
+            filesSection.appendChild(card);
+        }
+    });
+});
+</script>
+</body>
+</html>
