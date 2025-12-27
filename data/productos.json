@@ -1,0 +1,456 @@
+{
+  "switch": [
+    {
+      "id": "1",
+      "label": { "en": "Switch - Console Case", "es": "Switch - Funda Consola" },
+      "img": "https://amzn.to/3NmEIuU",
+      "url": "https://amzn.to/3NmEIuU"
+    },
+    {
+      "id": "2",
+      "label": { "en": "Switch - Game Case", "es": "Switch - Estuche Juegos" },
+      "img": "https://amzn.to/3RlmPhg",
+      "url": "https://amzn.to/3RlmPhg"
+    },
+    {
+      "id": "3",
+      "label": { "en": "Switch - Joy-Con Charger", "es": "Switch - Cargador Joy-Con" },
+      "img": "https://amzn.to/3NmPmCa",
+      "url": "https://amzn.to/3NmPmCa"
+    },
+    {
+      "id": "4",
+      "label": { "en": "Switch - Joy-Con Controller", "es": "Switch - Joy-Con" },
+      "img": "https://amzn.to/3RCe2sH",
+      "url": "https://amzn.to/3RCe2sH"
+    },
+    {
+      "id": "5",
+      "label": { "en": "Switch - Joy-Con Kit Pack", "es": "Switch - Kit-Pack Joy-Con" },
+      "img": "https://amzn.to/3NmLmBt",
+      "url": "https://amzn.to/3NmLmBt"
+    },
+    {
+      "id": "6",
+      "label": { "en": "Switch - Joy-Con Steering Wheel", "es": "Switch - Volante Joy-Con" },
+      "img": "https://amzn.to/3Tqf4cN",
+      "url": "https://amzn.to/3Tqf4cN"
+    },
+    {
+      "id": "7",
+      "label": { "en": "Switch - Pro Controller", "es": "Switch - Mando Pro" },
+      "img": "https://amzn.to/46O2jM9",
+      "url": "https://amzn.to/46O2jM9"
+    },
+    {
+      "id": "8",
+      "label": { "en": "Switch - RCM Jig", "es": "Switch - RCM" },
+      "img": "https://amzn.to/3Tk0OSw",
+      "url": "https://amzn.to/3Tk0OSw"
+    },
+    {
+      "id": "9",
+      "label": { "en": "Switch - Screen Protector Erista", "es": "Switch - Cristal Erista" },
+      "img": "https://amzn.to/4adosGu",
+      "url": "https://amzn.to/4adosGu"
+    },
+    {
+      "id": "10",
+      "label": { "en": "Switch - Screen Protector Lite", "es": "Switch - Cristal Lite" },
+      "img": "https://amzn.to/46QoHnX",
+      "url": "https://amzn.to/46QoHnX"
+    },
+    {
+      "id": "11",
+      "label": { "en": "Switch - Screen Protector OLED", "es": "Switch - Cristal OLED" },
+      "img": "https://amzn.to/3t4Xnon",
+      "url": "https://amzn.to/3t4Xnon"
+    },
+    {
+      "id": "12",
+      "label": { "en": "Switch - Shell Erista", "es": "Switch - Carcasa Erista" },
+      "img": "https://amzn.to/41lLO90",
+      "url": "https://amzn.to/41lLO90"
+    },
+    {
+      "id": "13",
+      "label": { "en": "Switch - Shell Lite", "es": "Switch - Carcasa Lite" },
+      "img": "https://amzn.to/41jXN6S",
+      "url": "https://amzn.to/41jXN6S"
+    },
+    {
+      "id": "14",
+      "label": { "en": "Switch - Shell OLED", "es": "Switch - Carcasa OLED" },
+      "img": "https://amzn.to/3RlD0Lo",
+      "url": "https://amzn.to/3RlD0Lo"
+    },
+    {
+      "id": "15",
+      "label": { "en": "Switch - Steering Wheel", "es": "Switch - Volante" },
+      "img": "https://amzn.to/46U01uE",
+      "url": "https://amzn.to/46U01uE"
+    },
+    {
+      "id": "16",
+      "label": { "en": "Switch - Switch Charger", "es": "Switch - Cargador Switch" },
+      "img": "https://amzn.to/46ZhDW1",
+      "url": "https://amzn.to/46ZhDW1"
+    },
+    {
+      "id": "17",
+      "label": { "en": "Switch - USB-C Cable", "es": "Switch - Cable USB C" },
+      "img": "https://amzn.to/3RDOzzh",
+      "url": "https://amzn.to/3RDOzzh"
+    }
+  ],
+  "3ds": [
+    {
+      "id": "1",
+      "label": { "en": "3DS - 3DS Charger", "es": "3DS - Cargador 3DS" },
+      "img": "https://amzn.to/3RBT1hE",
+      "url": "https://amzn.to/3RBT1hE"
+    },
+    {
+      "id": "2",
+      "label": { "en": "3DS - 3DS Console Case", "es": "3DS - Funda Consola" },
+      "img": "https://amzn.to/3TgvC6V",
+      "url": "https://amzn.to/3TgvC6V"
+    },
+    {
+      "id": "3",
+      "label": { "en": "3DS - 3DS Game Case", "es": "3DS - Funda Juegos" },
+      "img": "https://amzn.to/4gD5Vpp",
+      "url": "https://amzn.to/4gD5Vpp"
+    },
+    {
+      "id": "4",
+      "label": { "en": "3DS - New 2DS XL Screen Protector", "es": "3DS - Cristal N2DS XL" },
+      "img": "https://amzn.to/46TBi9V",
+      "url": "https://amzn.to/46TBi9V"
+    },
+    {
+      "id": "5",
+      "label": { "en": "3DS - New 3DS Joypad", "es": "3DS - Joypad N3DS" },
+      "img": "https://amzn.to/3TiJrS8",
+      "url": "https://amzn.to/3TiJrS8"
+    },
+    {
+      "id": "6",
+      "label": { "en": "3DS - New 3DS Screen Protector", "es": "3DS - Cristal N3DS" },
+      "img": "https://amzn.to/41j9fzF",
+      "url": "https://amzn.to/41j9fzF"
+    },
+    {
+      "id": "7",
+      "label": { "en": "3DS - New 3DS XL Joypad", "es": "3DS - Joypad N3DS XL" },
+      "img": "https://amzn.to/3GF1t9E",
+      "url": "https://amzn.to/3GF1t9E"
+    },
+    {
+      "id": "8",
+      "label": { "en": "3DS - New 3DS XL Screen Protector", "es": "3DS - Cristal N3DS XL" },
+      "img": "https://amzn.to/46VyYzp",
+      "url": "https://amzn.to/46VyYzp"
+    },
+    {
+      "id": "9",
+      "label": { "en": "3DS - Old 2DS Screen Protector", "es": "3DS - Cristal O2DS" },
+      "img": "https://amzn.to/41p5k4s",
+      "url": "https://amzn.to/41p5k4s"
+    },
+    {
+      "id": "10",
+      "label": { "en": "3DS - Old 3DS Screen Protector", "es": "3DS - Cristal O3DS" },
+      "img": "https://amzn.to/479oL2x",
+      "url": "https://amzn.to/479oL2x"
+    },
+    {
+      "id": "11",
+      "label": { "en": "3DS - Old 3DS XL Screen Protector", "es": "3DS - Cristal O3DS XL" },
+      "img": "https://amzn.to/3RD966Q",
+      "url": "https://amzn.to/3RD966Q"
+    },
+    {
+      "id": "12",
+      "label": { "en": "3DS - 2DS XL Joypad", "es": "3DS - Joypad N2DS XL" },
+      "img": "https://amzn.to/3NidLIH",
+      "url": "https://amzn.to/3NidLIH"
+    }
+  ],
+  "nds": [
+    {
+      "id": "1",
+      "label": { "en": "NDS - NDS Shell", "es": "NDS - Carcasa NDS" },
+      "img": "https://amzn.to/3tfup5e",
+      "url": "https://amzn.to/3tfup5e"
+    },
+    {
+      "id": "2",
+      "label": { "en": "NDS - NDSi Shell", "es": "NDS - Carcasa NDSi" },
+      "img": "https://amzn.to/3RDsFMv",
+      "url": "https://amzn.to/3RDsFMv"
+    },
+    {
+      "id": "3",
+      "label": { "en": "NDS - NDSi XL Shell", "es": "NDS - Carcasa NDSi XL" },
+      "img": "https://amzn.to/47Q3SKQ",
+      "url": "https://amzn.to/47Q3SKQ"
+    },
+    {
+      "id": "4",
+      "label": { "en": "NDS - NDS Screen Protector", "es": "NDS - Protector NDS" },
+      "img": "https://amzn.to/48bPA6P",
+      "url": "https://amzn.to/48bPA6P"
+    },
+    {
+      "id": "5",
+      "label": { "en": "NDS - NDSi Screen Protector", "es": "NDS - Protector NDSi" },
+      "img": "https://amzn.to/46ZnNFD",
+      "url": "https://amzn.to/46ZnNFD"
+    },
+    {
+      "id": "6",
+      "label": { "en": "NDS - NDSi XL Screen Protector", "es": "NDS - Protector NDSi XL" },
+      "img": "https://amzn.to/3teEU8J",
+      "url": "https://amzn.to/3teEU8J"
+    }
+  ],
+  "wii_wiiu": [
+    {
+      "id": "1",
+      "label": { "en": "Wii/WiiU - Wii Speaker", "es": "Wii/WiiU - Altavoz" },
+      "img": "https://amzn.to/3NAp7Ij",
+      "url": "https://amzn.to/3NAp7Ij"
+    },
+    {
+      "id": "2",
+      "label": { "en": "Wii/WiiU - GameCube Adapter", "es": "Wii/WiiU - Adaptador GameCube" },
+      "img": "https://amzn.to/3RjYBE1",
+      "url": "https://amzn.to/3RjYBE1"
+    },
+    {
+      "id": "3",
+      "label": { "en": "Wii/WiiU - GameCube Adapter (Alt)", "es": "Wii/WiiU - Adaptador GameCube (Alt)" },
+      "img": "https://amzn.to/4flbIir",
+      "url": "https://amzn.to/4flbIir"
+    },
+    {
+      "id": "4",
+      "label": { "en": "Wii/WiiU - GameCube to USB Adapter", "es": "Wii/WiiU - Adaptador GameCube-USB" },
+      "img": "https://amzn.to/4gFYLR9",
+      "url": "https://amzn.to/4gFYLR9"
+    },
+    {
+      "id": "5",
+      "label": { "en": "Wii/WiiU - GameCube Controller", "es": "Wii/WiiU - Mando GameCube" },
+      "img": "https://amzn.to/3ThYY4I",
+      "url": "https://amzn.to/3ThYY4I"
+    },
+    {
+      "id": "6",
+      "label": { "en": "Wii/WiiU - Battery for Wii Controller", "es": "Wii/WiiU - Batería Mando" },
+      "img": "https://amzn.to/3TtfC1d",
+      "url": "https://amzn.to/3TtfC1d"
+    },
+    {
+      "id": "7",
+      "label": { "en": "Wii/WiiU - Sensor Bar", "es": "Wii/WiiU - Barra Sensor" },
+      "img": "https://amzn.to/4amnLuB",
+      "url": "https://amzn.to/4amnLuB"
+    },
+    {
+      "id": "8",
+      "label": { "en": "Wii/WiiU - HDMI Adapter Cable", "es": "Wii/WiiU - Cable Adap. HDMI" },
+      "img": "https://amzn.to/3DfjLA6",
+      "url": "https://amzn.to/3DfjLA6"
+    },
+    {
+      "id": "9",
+      "label": { "en": "Wii/WiiU - Y-Cable for Wii U", "es": "Wii/WiiU - Cable Y - Wii U" },
+      "img": "https://amzn.to/3zDweMb",
+      "url": "https://amzn.to/3zDweMb"
+    },
+    {
+      "id": "10",
+      "label": { "en": "Wii/WiiU - Wii Charger", "es": "Wii/WiiU - Cargador Wii" },
+      "img": "https://amzn.to/4fCRtgt",
+      "url": "https://amzn.to/4fCRtgt"
+    },
+    {
+      "id": "11",
+      "label": { "en": "Wii/WiiU - Wii U Charger", "es": "Wii/WiiU - Cargador Wii U" },
+      "img": "https://amzn.to/3RMVp5A",
+      "url": "https://amzn.to/3RMVp5A"
+    },
+    {
+      "id": "12",
+      "label": { "en": "Wii/WiiU - PAD Charger", "es": "Wii/WiiU - Cargador PAD" },
+      "img": "https://amzn.to/3OWMX1p",
+      "url": "https://amzn.to/3OWMX1p"
+    },
+    {
+      "id": "13",
+      "label": { "en": "Wii/WiiU - Wii U Pro Case", "es": "Wii/WiiU - Carcasa Pro. Wii U" },
+      "img": "https://amzn.to/41jSnZJ",
+      "url": "https://amzn.to/41jSnZJ"
+    },
+    {
+      "id": "14",
+      "label": { "en": "Wii/WiiU - Dance Pad", "es": "Wii/WiiU - Pista Baile" },
+      "img": "https://amzn.to/41kgneV",
+      "url": "https://amzn.to/41kgneV"
+    },
+    {
+      "id": "15",
+      "label": { "en": "Wii/WiiU - Guitar Controller", "es": "Wii/WiiU - Guitarra" },
+      "img": "https://amzn.to/3RBNSWV",
+      "url": "https://amzn.to/3RBNSWV"
+    },
+    {
+      "id": "16",
+      "label": { "en": "Wii/WiiU - Memory Card for GameCube", "es": "Wii/WiiU - Memory Card GC" },
+      "img": "https://amzn.to/4agU79Y",
+      "url": "https://amzn.to/4agU79Y"
+    },
+    {
+      "id": "17",
+      "label": { "en": "Wii/WiiU - Wii Microphone", "es": "Wii/WiiU - Micrófono" },
+      "img": "https://amzn.to/3tbPai8",
+      "url": "https://amzn.to/3tbPai8"
+    },
+    {
+      "id": "18",
+      "label": { "en": "Wii/WiiU - Wii Remote Controller", "es": "Wii/WiiU - Mando Wii" },
+      "img": "https://amzn.to/4iEDjOf",
+      "url": "https://amzn.to/4iEDjOf"
+    },
+    {
+      "id": "19",
+      "label": { "en": "Wii/WiiU - Battery Support Stand", "es": "Wii/WiiU - Soporte Baterías" },
+      "img": "https://amzn.to/3NycOfD",
+      "url": "https://amzn.to/3NycOfD"
+    },
+    {
+      "id": "20",
+      "label": { "en": "Wii/WiiU - Wii Stand", "es": "Wii/WiiU - Soporte Wii" },
+      "img": "https://amzn.to/3Nv6mWG",
+      "url": "https://amzn.to/3Nv6mWG"
+    },
+    {
+      "id": "21",
+      "label": { "en": "Wii/WiiU - Wii U Stand", "es": "Wii/WiiU - Soporte Wii U" },
+      "img": "https://amzn.to/47izOqd",
+      "url": "https://amzn.to/47izOqd"
+    },
+    {
+      "id": "22",
+      "label": { "en": "Wii/WiiU - Video Capture Device", "es": "Wii/WiiU - Video Capturadora" },
+      "img": "https://amzn.to/3TtLQcJ",
+      "url": "https://amzn.to/3TtLQcJ"
+    },
+    {
+      "id": "23",
+      "label": { "en": "Wii/WiiU - Wii Fit Board", "es": "Wii/WiiU - Wii Fit" },
+      "img": "https://amzn.to/3RBKgUP",
+      "url": "https://amzn.to/3RBKgUP"
+    },
+    {
+      "id": "24",
+      "label": { "en": "Wii/WiiU - Wii U Pro Screen", "es": "Wii/WiiU - Pantalla Pro. Wii U" },
+      "img": "https://amzn.to/3Rauyic",
+      "url": "https://amzn.to/3Rauyic"
+    },
+    {
+      "id": "25",
+      "label": { "en": "Wii/WiiU - Wii U Pro Shell", "es": "Wii/WiiU - Funda Pro. Wii U" },
+      "img": "https://amzn.to/47RAvru",
+      "url": "https://amzn.to/47RAvru"
+    }
+  ],
+  "storage": [
+    {
+      "id": "1",
+      "label": { "en": "Storage - SD Card 128GB", "es": "Almacenamiento - SD 128GB" },
+      "img": "https://amzn.to/3zCCMdP",
+      "url": "https://amzn.to/3zCCMdP"
+    },
+    {
+      "id": "2",
+      "label": { "en": "Storage - SD Card 16GB", "es": "Almacenamiento - SD 16GB" },
+      "img": "https://amzn.to/3BflBwO",
+      "url": "https://amzn.to/3BflBwO"
+    },
+    {
+      "id": "3",
+      "label": { "en": "Storage - SD Card 256GB", "es": "Almacenamiento - SD 256GB" },
+      "img": "https://amzn.to/4cGcMwE",
+      "url": "https://amzn.to/4cGcMwE"
+    },
+    {
+      "id": "4",
+      "label": { "en": "Storage - SD Card 32GB", "es": "Almacenamiento - SD 32GB" },
+      "img": "https://amzn.to/3UqdkyU",
+      "url": "https://amzn.to/3UqdkyU"
+    },
+    {
+      "id": "5",
+      "label": { "en": "Storage - SD Card 64GB", "es": "Almacenamiento - SD 64GB" },
+      "img": "https://amzn.to/3LlkTTl",
+      "url": "https://amzn.to/3LlkTTl"
+    },
+    {
+      "id": "6",
+      "label": { "en": "Storage - USB 128GB", "es": "Almacenamiento - USB 128GB" },
+      "img": "https://amzn.to/3W0Kg34",
+      "url": "https://amzn.to/3W0Kg34"
+    },
+    {
+      "id": "7",
+      "label": { "en": "Storage - USB 16GB", "es": "Almacenamiento - USB 16GB" },
+      "img": "https://amzn.to/3xEfoMj",
+      "url": "https://amzn.to/3xEfoMj"
+    },
+    {
+      "id": "8",
+      "label": { "en": "Storage - USB 1TB", "es": "Almacenamiento - USB 1TB" },
+      "img": "https://amzn.to/4cGsgAC",
+      "url": "https://amzn.to/4cGsgAC"
+    },
+    {
+      "id": "9",
+      "label": { "en": "Storage - USB 256GB", "es": "Almacenamiento - USB 256GB" },
+      "img": "https://amzn.to/4cKvX8r",
+      "url": "https://amzn.to/4cKvX8r"
+    },
+    {
+      "id": "10",
+      "label": { "en": "Storage - USB 2TB", "es": "Almacenamiento - USB 2TB" },
+      "img": "https://amzn.to/4cn7pm7",
+      "url": "https://amzn.to/4cn7pm7"
+    },
+    {
+      "id": "11",
+      "label": { "en": "Storage - USB 32GB", "es": "Almacenamiento - USB 32GB" },
+      "img": "https://amzn.to/3L5i7le",
+      "url": "https://amzn.to/3L5i7le"
+    },
+    {
+      "id": "12",
+      "label": { "en": "Storage - USB 4TB", "es": "Almacenamiento - USB 4TB" },
+      "img": "https://amzn.to/4cEc8iU",
+      "url": "https://amzn.to/4cEc8iU"
+    },
+    {
+      "id": "13",
+      "label": { "en": "Storage - USB 512GB", "es": "Almacenamiento - USB 512GB" },
+      "img": "https://amzn.to/3VJA25F",
+      "url": "https://amzn.to/3VJA25F"
+    },
+    {
+      "id": "14",
+      "label": { "en": "Storage - USB 64GB", "es": "Almacenamiento - USB 64GB" },
+      "img": "https://amzn.to/3XFwrIA",
+      "url": "https://amzn.to/3XFwrIA"
+    }
+  ]
+}
