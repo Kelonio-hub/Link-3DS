@@ -1,12 +1,226 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Política de Privacidad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Privacy Policy</title>
+
+    <!-- FAVICONS LUCARIO -->
+  <link rel="icon" type="image/gif" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+
+  <style>
+    :root {
+      --glass-bg: rgba(20,20,20,.65);
+      --glass-border: rgba(255,255,255,.15);
+      --blue-aura: #00aaff;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 40px;
+      line-height: 1.6;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                  url('https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Fondo.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    }
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-shadow: 0 0 18px rgba(0,255,136,.4);
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 24px;
+      color: var(--blue-aura);
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #00ff88;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .note {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      margin: 20px 0;
+      border-left: 4px solid var(--blue-aura);
+    }
+    code {
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Selector de idioma (mismo estilo que el index) */
+    .language-selector {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+    }
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(0,0,0,.8);
+      color: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--glass-border);
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Política de Privacidad</h1>
-  <p>Esta web solo solicita acceso a tu cuenta de YouTube para verificar si estás suscrito a nuestro canal. No almacenamos tu contraseña ni otros datos personales.</p>
+
+  <div class="container">
+    <h1 id="title">Privacy Policy</h1>
+
+    <div id="content-en">
+      <p>Last updated: December 30, 2025</p>
+
+      <h2>1. Introduction</h2>
+      <p>This Privacy Policy describes how "Nintendo Files | La Presa" (hereinafter "we" or "the site") handles information from users visiting our website.</p>
+      <p>We do not permanently collect any personal data. The site does not require registration or mandatory entry of personal information.</p>
+
+      <h2>2. YouTube Subscription</h2>
+      <p>Access to the main content requires being subscribed to the YouTube channel "Kelonio 3DS".</p>
+      
+      <div class="note">
+        <strong>Current status:</strong> Currently, subscription verification is done manually via a local timer. Clicking "Subscribe" opens YouTube in a new tab. We do not use the YouTube API or OAuth. We do not access or store any data from your Google/YouTube account.
+      </div>
+
+      <p><strong>In the future:</strong> We plan to implement the YouTube API with OAuth 2.0 authentication to automatically verify subscription. At that time:</p>
+      <ul>
+        <li>We will request explicit permission to access only the public subscription status (scope: <code>https://www.googleapis.com/auth/youtube.readonly</code> limited to subscription verification).</li>
+        <li>We will not request or have access to your password, emails, private videos, or any other personal data.</li>
+        <li>The access token will be used only in the user's browser (client-side) and will not be stored on our servers.</li>
+        <li>You can revoke permission at any time from your Google account.</li>
+      </ul>
+      <p>All interaction with Google/YouTube will be subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+
+      <h2>3. Data We Do NOT Collect</h2>
+      <ul>
+        <li>IP addresses</li>
+        <li>Account information (except, in the future, temporary subscription verification via OAuth)</li>
+        <li>Tracking or analytics cookies</li>
+        <li>Browsing or behavior data</li>
+        <li>Any sensitive personal data</li>
+      </ul>
+
+      <h2>4. External Links</h2>
+      <p>The site contains links to external services (MediaFire, Mega, Amazon, Discord, etc.). Each has its own privacy policy, over which we have no control.</p>
+
+      <h2>5. Changes to This Policy</h2>
+      <p>We will update this Privacy Policy when new features are implemented (such as real verification with the YouTube API). The latest version will always be available on this page.</p>
+
+      <h2>6. Contact</h2>
+      <p>If you have questions about this policy, you can contact us through our social media channels listed on the main site.</p>
+    </div>
+
+    <div id="content-es" style="display:none;">
+      <p>Última actualización: 30 de diciembre de 2025</p>
+
+      <h2>1. Introducción</h2>
+      <p>Esta Política de Privacidad describe cómo "Archivos Nintendo | La Presa" (en adelante "nosotros" o "el sitio") trata la información de los usuarios que visitan nuestra página web.</p>
+      <p>No recopilamos datos personales de ningún tipo de forma permanente. El sitio no requiere registro ni introducción obligatoria de información personal.</p>
+
+      <h2>2. Suscripción a YouTube</h2>
+      <p>El acceso al contenido principal requiere estar suscrito al canal de YouTube "Kelonio 3DS".</p>
+      
+      <div class="note">
+        <strong>Estado actual:</strong> Actualmente, la verificación de la suscripción se realiza de forma manual mediante un temporizador local. Al hacer clic en "Suscribirse", se abre YouTube en una nueva pestaña. No utilizamos la API de YouTube ni OAuth. No accedemos ni almacenamos ningún dato de tu cuenta de Google/YouTube.
+      </div>
+
+      <p><strong>En el futuro:</strong> Planeamos implementar la API de YouTube con autenticación OAuth 2.0 para verificar automáticamente la suscripción. En ese momento:</p>
+      <ul>
+        <li>Solicitaremos permiso explícito para acceder únicamente al estado de suscripción pública (scope: <code>https://www.googleapis.com/auth/youtube.readonly</code> limitado a verificación de suscripciones).</li>
+        <li>No solicitaremos ni tendremos acceso a tu contraseña, correos, vídeos privados ni ningún otro dato personal.</li>
+        <li>El token de acceso se usará solo en el navegador del usuario (client-side) y no se almacenará en nuestros servidores.</li>
+        <li>Podrás revocar el permiso en cualquier momento desde tu cuenta de Google.</li>
+      </ul>
+      <p>Toda interacción con Google/YouTube estará sujeta a su <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a>.</p>
+
+      <h2>3. Datos que NO recopilamos</h2>
+      <ul>
+        <li>Direcciones IP</li>
+        <li>Información de cuentas (excepto, en el futuro, verificación temporal de suscripción vía OAuth)</li>
+        <li>Cookies de rastreo o analíticas</li>
+        <li>Datos de navegación o comportamiento</li>
+        <li>Ningún dato personal sensible</li>
+      </ul>
+
+      <h2>4. Enlaces externos</h2>
+      <p>El sitio contiene enlaces a servicios externos (MediaFire, Mega, Amazon, Discord, etc.). Cada uno tiene su propia política de privacidad, sobre la que no tenemos control.</p>
+
+      <h2>5. Cambios en esta política</h2>
+      <p>Actualizaremos esta Política de Privacidad cuando implementemos nuevas funcionalidades (como la verificación real con la API de YouTube). La versión más reciente siempre estará disponible en esta página.</p>
+
+      <h2>6. Contacto</h2>
+      <p>Si tienes preguntas sobre esta política, puedes contactarnos a través de nuestros canales en las redes sociales indicadas en el sitio principal.</p>
+    </div>
+  </div>
+
+  <!-- Selector de idioma -->
+  <div class="language-selector">
+    <select id="language-select" onchange="cambiarIdioma(this.value)">
+      <option value="en" selected>English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
+  <script>
+    function cambiarIdioma(lang) {
+      if (lang === 'en') {
+        document.documentElement.lang = 'en';
+        document.getElementById('pageTitle').textContent = 'Privacy Policy';
+        document.getElementById('title').textContent = 'Privacy Policy';
+        document.getElementById('content-es').style.display = 'none';
+        document.getElementById('content-en').style.display = 'block';
+      } else {
+        document.documentElement.lang = 'es';
+        document.getElementById('pageTitle').textContent = 'Política de Privacidad';
+        document.getElementById('title').textContent = 'Política de Privacidad';
+        document.getElementById('content-es').style.display = 'block';
+        document.getElementById('content-en').style.display = 'none';
+      }
+      // Actualizar select por si llegó con ?lang=
+      document.getElementById('language-select').value = lang;
+    }
+
+    // Al cargar: prioridad al parámetro URL, si no, inglés por defecto
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    const langInicial = urlLang === 'es' ? 'es' : 'en';
+    cambiarIdioma(langInicial);
+  </script>
+
 </body>
 </html>
 
