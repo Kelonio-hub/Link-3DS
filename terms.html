@@ -1,12 +1,193 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Términos de Servicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="pageTitle">Terms of Service</title>
+
+  <!-- FAVICONS LUCARIO -->
+  <link rel="icon" type="image/gif" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+
+
+  <style>
+    :root {
+      --glass-bg: rgba(20,20,20,.65);
+      --glass-border: rgba(255,255,255,.15);
+      --blue-aura: #00aaff;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 40px;
+      line-height: 1.6;
+      min-height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+                  url('https://raw.githubusercontent.com/Kelonio-hub/Link-3DS/main/Logo%20Fondo.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border);
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    }
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      text-shadow: 0 0 18px rgba(0,255,136,.4);
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 24px;
+      color: var(--blue-aura);
+    }
+    p {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #00ff88;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .note {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      margin: 20px 0;
+      border-left: 4px solid var(--blue-aura);
+    }
+
+    .language-selector {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 1000;
+    }
+    .language-selector select {
+      padding: 8px 12px;
+      background: rgba(0,0,0,.8);
+      color: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--glass-border);
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Términos de Servicio</h1>
-  <p>Todos los archivos y servicios red son gratuitos para todos los usuarios, con posibilidad de compartirlos sin ánimo de lucro.</p>
+
+  <div class="container">
+    <h1 id="title">Terms of Service</h1>
+
+    <div id="content-en">
+      <p>Last updated: December 30, 2025</p>
+
+      <h2>1. Acceptance of Terms</h2>
+      <p>By accessing and using this website ("Nintendo Files | La Presa"), you accept and agree to be bound by the terms and provisions of this agreement.</p>
+
+      <h2>2. Provided Services</h2>
+      <p>All files, links, and services offered on this site are completely free for all users. You may download and share the provided files for personal, non-commercial use only.</p>
+
+      <h2>3. Non-Commercial Use</h2>
+      <p>The content of this site (homebrew tools, guides, links, etc.) is intended for personal and educational use. Redistribution or sharing of the files is permitted as long as it is done without profit or commercial intent.</p>
+
+      <h2>4. External Links and Downloads</h2>
+      <p>This site provides links to third-party hosting services (MediaFire, Mega, Amazon, etc.). We are not responsible for the availability, content, or security of these external sites. Downloads are at your own risk.</p>
+
+      <h2>5. Warranty and File Quality</h2>
+      <p>We strive to ensure that all files provided on the site are free of viruses, malware, and critical errors. Each file is checked before being published.</p>
+      <p>However, due to the nature of homebrew software and console modifications, we cannot offer an absolute guarantee of perfect compatibility with all devices or situations.</p>
+
+      <h2>6. User Responsibility and Support</h2>
+      <p>You are responsible for making backups and following instructions carefully when modifying your consoles. Modifying hardware or software may void the manufacturer's warranty or violate their terms of service.</p>
+      <p><strong>We are committed to helping you:</strong> If you have any questions or issues during the modification process, you can contact us through our Discord servers or social media. We will do our best to guide and assist you.</p>
+
+      <h2>7. Changes to Terms</h2>
+      <p>We reserve the right to modify these terms at any time. Continued use of the site after changes constitutes acceptance of the new terms.</p>
+
+      <h2>8. Contact</h2>
+      <p>If you have any questions about these Terms of Service, please contact us through the social media channels listed on the main site.</p>
+    </div>
+
+    <div id="content-es" style="display:none;">
+      <p>Última actualización: 30 de diciembre de 2025</p>
+
+      <h2>1. Aceptación de los Términos</h2>
+      <p>Al acceder y utilizar este sitio web ("Archivos Nintendo | La Presa"), aceptas y te comprometes a cumplir con los términos y disposiciones de este acuerdo.</p>
+
+      <h2>2. Servicios Ofrecidos</h2>
+      <p>Todos los archivos, enlaces y servicios ofrecidos en este sitio son completamente gratuitos para todos los usuarios. Puedes descargar y compartir los archivos proporcionados únicamente para uso personal y no comercial.</p>
+
+      <h2>3. Uso No Comercial</h2>
+      <p>El contenido del sitio (herramientas homebrew, guías, enlaces, etc.) está destinado a uso personal y educativo. Se permite la redistribución o compartición de los archivos siempre que se realice sin ánimo de lucro ni fines comerciales.</p>
+
+      <h2>4. Enlaces y Descargas Externas</h2>
+      <p>Este sitio proporciona enlaces a servicios de alojamiento de terceros (MediaFire, Mega, Amazon, etc.). No nos responsabilizamos de la disponibilidad, contenido o seguridad de estos sitios externos. Las descargas corren por tu propia cuenta y riesgo.</p>
+
+      <h2>5. Garantía y Calidad de los Archivos</h2>
+      <p>Nos comprometemos a que todos los archivos proporcionados en el sitio están revisados y libres de virus, malware y errores graves. Cada archivo es comprobado antes de publicarse.</p>
+      <p>Sin embargo, debido a la naturaleza del software homebrew y las modificaciones de consolas, no podemos garantizar una compatibilidad absoluta con todos los dispositivos o situaciones.</p>
+
+      <h2>6. Responsabilidad del Usuario y Soporte</h2>
+      <p>Eres responsable de realizar copias de seguridad y seguir las instrucciones con cuidado al modificar tus consolas. Modificar hardware o software puede anular la garantía del fabricante o violar sus términos de servicio.</p>
+      <p><strong>Nos comprometemos a ayudarte:</strong> Si surge cualquier duda o problema durante el proceso de modificación, puedes contactarnos a través de nuestros servidores de Discord o redes sociales. Haremos todo lo posible por guiarte y resolver tus consultas.</p>
+
+      <h2>7. Modificaciones de los Términos</h2>
+      <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado del sitio tras los cambios implica la aceptación de los nuevos términos.</p>
+
+      <h2>8. Contacto</h2>
+      <p>Si tienes alguna pregunta sobre estos Términos de Servicio, puedes contactarnos a través de los canales de redes sociales indicados en el sitio principal.</p>
+    </div>
+  </div>
+
+  <div class="language-selector">
+    <select id="language-select" onchange="cambiarIdioma(this.value)">
+      <option value="en" selected>English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
+  <script>
+    function cambiarIdioma(lang) {
+      if (lang === 'en') {
+        document.documentElement.lang = 'en';
+        document.getElementById('pageTitle').textContent = 'Terms of Service';
+        document.getElementById('title').textContent = 'Terms of Service';
+        document.getElementById('content-es').style.display = 'none';
+        document.getElementById('content-en').style.display = 'block';
+      } else {
+        document.documentElement.lang = 'es';
+        document.getElementById('pageTitle').textContent = 'Términos del Servicio';
+        document.getElementById('title').textContent = 'Términos del Servicio';
+        document.getElementById('content-es').style.display = 'block';
+        document.getElementById('content-en').style.display = 'none';
+      }
+      document.getElementById('language-select').value = lang;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    const langInicial = urlLang === 'es' ? 'es' : 'en';
+    cambiarIdioma(langInicial);
+  </script>
+
 </body>
 </html>
-
