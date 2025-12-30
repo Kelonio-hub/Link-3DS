@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="pageTitle">Archivos Nintendo | La Presa</title>
+
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="BgK5psyvjiJO1yoZ1sOIRa1dTQONgjMJwwIcNz-o_n0" />
+
+  <!-- FAVICONS -->
+  <link rel="icon" type="image/gif" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="icon" type="image/png" sizes="192x192" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+  <meta name="msapplication-TileImage" content="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="text-image-container">
+      <div class="text-section" id="textSection">
+        <p id="mainText">¡Suscríbete para acceder al contenido!</p>
+        <div class="note" id="instructions">
+          1. Haz clic en el botón de suscripción.<br>
+          2. Confirma la suscripción en YouTube.<br>
+          3. Espera hasta que se verifique la suscripción.<br>
+          4. Selecciona la consola y los archivos que deseas descargar.
+        </div>
+      </div>
+      <div id="consoleImageContainer"></div>
+    </div>
+
+    <div class="button-section" id="buttonContainer">
+      <button id="subscribeBtn">Suscribirse</button>
+
+      <div id="loading" style="display:none;">
+        <img src="https://raw.githubusercontent.com/Kelonio-hub/Archivos-Kelonio/main/Lucario.gif" 
+             alt="Desbloqueando..." id="loadingGif">
+        <div id="loadingText"></div>
+      </div>
+    </div>
+
+    <div class="console-search-container" id="consoleSearchContainer" style="display:none;">
+      <div class="console-selector" id="consoleSelector"></div>
+      
+      <div class="search-wrapper">
+        <div class="search-toggle">🔍</div>
+        <div class="search-bar">
+          <input type="text" id="fileSearch" placeholder="Buscar archivos...">
+        </div>
+      </div>
+    </div>
+
+    <div class="files-section" id="filesSection"></div>
+  </div>
+
+  <!-- Floating social links (puedes completar con tus links reales) -->
+  <div class="social-floating">
+    <!-- Discord, Twitter/X, GitHub, PayPal, Ko-fi, etc. -->
+  </div>
+
+  <div class="language-selector">
+    <select id="language-select">
+      <option value="en">English</option>
+      <option value="es" selected>Español</option>
+    </select>
+  </div>
+
+  <footer>
+    <a href="https://kelonio-hub.github.io/Archivos-Kelonio/privacy.html" target="_blank">
+      <span id="privacyText">Política de Privacidad</span>
+    </a> |
+    <a href="https://kelonio-hub.github.io/Archivos-Kelonio/terms.html" target="_blank">
+      <span id="termsText">Términos del Servicio</span>
+    </a>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/config.js"></script>
+  <script type="module" src="js/i18n.js"></script>
+  <script type="module" src="js/state.js"></script>
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/ui.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
