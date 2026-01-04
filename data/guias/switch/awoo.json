@@ -3,7 +3,8 @@
     "es": "1. Copia el archivo awoo-installer.nro a la carpeta /switch/ en tu SD.\n2. Abre el Homebrew Menu (mantén presionado R mientras abres el Álbum).\n3. Ejecuta Awoo Installer.\n4. Selecciona la fuente de instalación (USB, SD o red).\n5. Elige los archivos a instalar y confirma.\n\n**Consejo**: Siempre descarga la versión más reciente desde fuentes oficiales y verifica los hashes para mayor seguridad.",
     "en": "1. Copy the awoo-installer.nro file to the /switch/ folder on your SD card.\n2. Open the Homebrew Menu (hold R while opening the Album).\n3. Run Awoo Installer.\n4. Select the installation source (USB, SD or network).\n5. Choose the files to install and confirm.\n\n**Tip**: Always download the latest version from official sources and verify hashes for safety."
   },
-  "videoYoutubeId": "https://www.youtube.com/watch?v=lv76djYZ-QU",
+  "videoYoutubeId": "lv76djYZ-QU",
   "url": "https://www.mediafire.com/folder/dw42dmmi7wn6h/Awoo"
 }
+
 
