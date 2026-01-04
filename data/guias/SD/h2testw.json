@@ -1,0 +1,8 @@
+{
+  "pasos": {
+    "es": "1. Descarga y abre H2testw.\n2. Selecciona tu tarjeta SD (¡verifica bien la unidad!).\n3. Pulsa 'Write + Verify'.\n4. Espera a que termine el test (puede tardar horas).\n5. Al finalizar, revisa el informe: si dice 'Test finished without errors' → la SD es buena.\n\n**Advertencia**: ¡Backup antes! El test escribe y borra todo el espacio disponible.",
+    "en": "1. Download and open H2testw.\n2. Select your SD card (double-check the drive!).\n3. Click 'Write + Verify'.\n4. Wait for the test to complete (can take hours).\n5. Check the report: if 'Test finished without errors' → SD is good.\n\n**Warning**: Backup first! The test writes and erases all available space."
+  },
+  "videoYoutubeId": "KjQJyIqa-lE", 
+  "url": "https://www.mediafire.com/folder/wk4sdkt7721nr/H2TESTW"
+}

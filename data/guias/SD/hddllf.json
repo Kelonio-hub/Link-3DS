@@ -1,0 +1,8 @@
+{
+  "pasos": {
+    "es": "1. Descarga HDDLLF (Low Level Format Tool).\n2. Ejecuta el programa como administrador.\n3. Selecciona tu tarjeta SD en la lista de dispositivos.\n4. Ve a la pestaña 'Low-Level Format'.\n5. Marca 'Perform a quick format' si quieres rápido, o deja desmarcado para formato completo.\n6. Pulsa 'Format this device' y confirma.\n\n**Advertencia**: ¡Backup obligatorio! Esto elimina todos los datos y puede tardar horas en tarjetas grandes.",
+    "en": "1. Download HDDLLF (Low Level Format Tool).\n2. Run the program as administrator.\n3. Select your SD card from the device list.\n4. Go to 'Low-Level Format' tab.\n5. Check 'Perform a quick format' for faster process (or leave unchecked for full).\n6. Click 'Format this device' and confirm.\n\n**Warning**: Backup required! This wipes all data and may take hours on large cards."
+  },
+  "videoYoutubeId": "EKVQyQ8PGfc",
+  "url": "https://www.mediafire.com/folder/cz7onqvq127s8/HDDLLF"
+}
