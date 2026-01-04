@@ -1,0 +1,12 @@
+{
+  "descripcionCorta": {
+    "es": "Permite instalar juegos multiplataforma (NSP, NSZ, XCI, XCZ).\n\nPrecisa del uso del programa NS-USBLOADER [Se encuentra enlazado con Awoo].",
+    "en": "Allows installation of multi-platform games (NSP, NSZ, XCI, XCZ).\n\nRequires the use of the NS-USBLOADER program [It is linked with Awoo]."
+  },
+  "pasos": {
+    "es": "1. Copia el archivo awoo-installer.nro a la carpeta /switch/ en tu SD.\n2. Abre el Homebrew Menu (mantén R mientras abres el Álbum).\n3. Ejecuta Awoo Installer.\n4. Selecciona la fuente (USB, SD o red).\n5. Elige los archivos a instalar y confirma.\n\n**Consejo**: Usa siempre la versión más reciente desde fuentes oficiales.",
+    "en": "1. Copy the awoo-installer.nro file to the /switch/ folder on your SD.\n2. Open the Homebrew Menu (hold R while opening the Album).\n3. Run Awoo Installer.\n4. Select the source (USB, SD or network).\n5. Choose the files to install and confirm.\n\n**Tip**: Always use the latest version from official sources."
+  },
+  "videoYoutubeId": "lv76djYZ-QU",
+  "url": "https://www.mediafire.com/folder/dw42dmmi7wn6h/Awoo"
+}
