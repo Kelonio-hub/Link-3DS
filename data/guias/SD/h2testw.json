@@ -1,0 +1,8 @@
+{
+  "pasos": {
+    "es": "Advertencia: ¡Haz backup antes! Esto borra todo en la SD/USB.\n Descarga y abre H2testw.\n Selecciona tu tarjeta SD (¡verifica bien la unidad!).\n Pulsa 'Write + Verify'.\n Espera a que termine el test (puede tardar horas).\n Al finalizar, revisa el informe: si dice 'Test finished without errors' → la SD es buena.",
+    "en": "Warning: Backup first! This erases everything on the SD.\n Download and open H2testw.\n Select your SD card (double-check the drive!).\n Click 'Write + Verify'.\n Wait for the test to complete (can take hours).\n Check the report: if 'Test finished without errors' → SD is good."
+  },
+  "videoYoutubeId": "KjQJyIqa-lE", 
+  "url": "https://www.mediafire.com/folder/wk4sdkt7721nr/H2TESTW"
+}

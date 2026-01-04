@@ -1,0 +1,8 @@
+{
+  "pasos": {
+    "es": "Advertencia: ¡Haz backup antes! Esto borra todo en la SD/USB.\n Descarga HDDLLF.\n Ejecuta el programa como administrador.\n Selecciona tu tarjeta SD en la lista de dispositivos.\n Ve a la pestaña 'Low-Level Format'.\n Marca 'Perform a quick format' si quieres rápido, o deja desmarcado para formato completo.\n Pulsa 'Format this device' y confirma.",
+    "en": "Warning: Backup first! This erases everything on the SD.\n Download HDDLLF.\n Run the program as administrator.\n Select your SD card from the device list.\n Go to 'Low-Level Format' tab.\n Check 'Perform a quick format' for faster process (or leave unchecked for full).\n Click 'Format this device' and confirm."
+  },
+  "videoYoutubeId": "EKVQyQ8PGfc",
+  "url": "https://www.mediafire.com/folder/cz7onqvq127s8/HDDLLF"
+}

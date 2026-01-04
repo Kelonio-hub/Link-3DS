@@ -1,0 +1,8 @@
+{
+  "pasos": {
+    "es": "Advertencia: ¡Haz backup antes! Esto borra todo en la SD/USB.\n Descarga RMP (RMPrepUSB).\n Ejecuta el programa.\n Selecciona tu tarjeta SD.\n Elige FAT32 + 32 KB cluster.\n Pulsa 'Prepare SD/USB'.\n Espera a que termine y expulsa la SD correctamente.",
+    "en": "Warning: Backup first! This erases everything on the SD/USB.\n  Download RMP (RMPrepUSB).\n Run the program.\n Select your SD card.\n Choose FAT32 + 32 KB cluster size.\n Click 'Prepare SD/USB'.\n Wait and safely eject the SD."
+  },
+  "videoYoutubeId": "HTojwb3kScY",
+  "url": "https://www.mediafire.com/folder/8ogmifi13v5gv/RMP"
+}
