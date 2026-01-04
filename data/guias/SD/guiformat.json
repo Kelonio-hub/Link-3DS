@@ -1,8 +1,0 @@
-{
-  "pasos": {
-    "es": "1. Descarga y abre GUIFormat (asegúrate de seleccionar la unidad correcta de tu SD).\n2. Elige el sistema de archivos FAT32.\n3. Tamaño de unidad de asignación: 32 KB (recomendado para Switch).\n4. Marca 'Quick Format' si quieres que sea más rápido (sino deja desmarcado para formato completo).\n5. Pulsa Start y espera a que termine.\n\n**Advertencia**: ¡Haz backup antes! Esto borra todo en la SD.",
-    "en": "1. Download and open GUIFormat (make sure to select the correct drive for your SD).\n2. Choose FAT32 file system.\n3. Allocation unit size: 32 KB (recommended for Switch).\n4. Check 'Quick Format' for faster process (or leave unchecked for full format).\n5. Click Start and wait.\n\n**Warning**: Backup first! This erases everything on the SD."
-  },
-  "videoYoutubeId": "CqrJ3fdQaP8",
-  "url": "https://www.mediafire.com/folder/nq6o3e1ak3pbe/GUIFORMAT"
-}
