@@ -1,8 +1,0 @@
-{
-  "pasos": {
-    "es": "1. Descarga RMP (SD Preparation Tool).\n2. Ejecuta el programa.\n3. Selecciona tu tarjeta SD.\n4. Elige FAT32 + 32 KB cluster.\n5. Pulsa 'Prepare SD' o similar.\n6. Espera a que termine y expulsa la SD correctamente.\n\n**Consejo**: Útil para preparar SD para Atmosphere o CFW. Siempre verifica después con H2testw.",
-    "en": "1. Download RMP (SD Preparation Tool).\n2. Run the program.\n3. Select your SD card.\n4. Choose FAT32 + 32 KB cluster size.\n5. Click 'Prepare SD' or equivalent.\n6. Wait and safely eject the SD.\n\n**Tip**: Great for preparing SD for Atmosphere or CFW. Always verify with H2testw afterward."
-  },
-  "videoYoutubeId": "HTojwb3kScY",
-  "url": "https://www.mediafire.com/folder/8ogmifi13v5gv/RMP"
-}
