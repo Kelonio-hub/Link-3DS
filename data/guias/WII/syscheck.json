@@ -1,0 +1,8 @@
+{
+  "pasos": {
+    "es": "Descargar archivos.\n Abre el Homebrew Menu.\n Ejecutar SysCheck. \nGenerar report.txt. \nVerificar cIOS/IOS instalados.",
+    "en": "Download files.\n Open the Homebrew Menu.\n Run SysCheck. \nGenerate report.txt. \nCheck installed cIOS/IOS."
+  },
+  "videoYoutubeId": "",
+  "url": "https://www.mediafire.com/folder/jzu9jtimupx90/SysckeckMe"
+}
