@@ -1,0 +1,77 @@
+{
+  "chatTranslations": {
+    "es": {
+      "greetingFirst": "¡Bienvenid@! 🎉 ¿Es tu primera vez? Te ayudo a encontrar lo que necesitas. ¿Sobre qué consola empezamos?",
+      "greetingReturn": "¡Hola de nuevo! 😎 ¿Seguimos con la misma consola o cambiamos?",
+      "askCategory": "¿Qué quieres hacer en <strong>{console}</strong>?",
+      "itemPreview": "<strong>{title}</strong><br><em>{desc}</em>",
+      "proceed": "Abrir guía →",
+      "searchHint": "Buscar por nombre o descripción...",
+      "noResults": "No encontré nada con esa búsqueda 😔",
+      "noItems": "No hay guías en esta categoría.",
+      "back": "← Volver",
+      "selected": "Seleccionado:",
+      "beginnerSuggestion": "Recomendado para principiantes",
+      "faqTitle": "¿Tienes algún problema común?",
+      "faqNoSolution": "No encontré solución rápida para eso... ¡prueba otra opción o escribe en Discord!"
+    },
+    "en": {
+      "greetingFirst": "Welcome! 🎉 Is this your first time? I'll help you find what you need. Which console shall we start with?",
+      "greetingReturn": "Hello again! 😎 Shall we continue with the same console or switch?",
+      "askCategory": "What do you want to do on <strong>{console}</strong>?",
+      "itemPreview": "<strong>{title}</strong><br><em>{desc}</em>",
+      "proceed": "Open guide →",
+      "searchHint": "Search by name or description...",
+      "noResults": "No results found 😔",
+      "noItems": "No guides in this category.",
+      "back": "← Back",
+      "selected": "Selected:",
+      "beginnerSuggestion": "Recommended for beginners",
+      "faqTitle": "Do you have a common problem?",
+      "faqNoSolution": "I didn't find a quick solution for that... try another option or ask on Discord!"
+    }
+  },
+  "thematicCategories": {
+    "switch": [
+      { "nameES": "Primeros pasos / Lo esencial", "nameEN": "Getting Started / Essentials", "keywords": ["Pack Archivos switch", "Hack Mariko - Lite", "Modo Incógnito", "TegraExplorer"], "beginner": true },
+      { "nameES": "Hackeo / CFW", "nameEN": "Hack / CFW", "keywords": ["Pack", "Hack Mariko", "Semibrick", "Incógnito", "TegraExplorer"] },
+      { "nameES": "Instaladores", "nameEN": "Installers", "keywords": ["Awoo", "DBI"] },
+      { "nameES": "Gestión de Saves", "nameEN": "Save Management", "keywords": ["Checkpoint", "JKSV", "PKHeX"] },
+      { "nameES": "Temas Personalizados", "nameEN": "Custom Themes", "keywords": ["NXThemes", "Tesla"] },
+      { "nameES": "Online / Multiplayer", "nameEN": "Online / Multiplayer", "keywords": ["Lan-Play"] },
+      { "nameES": "Reproductores / Utilidades", "nameEN": "Players / Utilities", "keywords": ["Pplay", "Ebook", "FTP", "Mission Control"] },
+      { "nameES": "Dump / Backup", "nameEN": "Dump / Backup", "keywords": ["NXDumpTool"] }
+    ],
+    "3ds": [
+      { "nameES": "Primeros pasos / Lo esencial", "nameEN": "Getting Started / Essentials", "keywords": ["Luma", "GodMode9", "Checkpoint"], "beginner": true },
+      { "nameES": "Métodos de Hack", "nameEN": "Hack Methods", "keywords": ["Hack -", "NTRBoot", "MSET9", "SafeCertHax", "SuperSkater", "Freaky", "Kart"] },
+      { "nameES": "Actualización CFW", "nameEN": "CFW Update", "keywords": ["A9LH", "Luma"] },
+      { "nameES": "Temas Personalizados", "nameEN": "Custom Themes", "keywords": ["Anemone", "Themely"] },
+      { "nameES": "Gestión de Saves", "nameEN": "Save Management", "keywords": ["Checkpoint", "JKSM"] },
+      { "nameES": "Instaladores / Convertidores", "nameEN": "Installers / Converters", "keywords": ["Convert", "Custom-Install", "FBI-Inject"] },
+      { "nameES": "Online / Pretendo", "nameEN": "Online / Pretendo", "keywords": ["Pretendo"] },
+      { "nameES": "Reparaciones / Fixes", "nameEN": "Repairs / Fixes", "keywords": ["TinyFormat", "TWLFix", "DSP1", "Faketik", "SlotTool", "Black Lazarus", "Blue Lazarus"] }
+    ],
+    "nds": [
+      { "nameES": "Primeros pasos / Lo esencial", "nameEN": "Getting Started / Essentials", "keywords": ["MemoryPit", "Stylehax"], "beginner": true },
+      { "nameES": "Hackeo DSi", "nameEN": "DSi Hack", "keywords": ["MemoryPit", "Stylehax"] },
+      { "nameES": "Online Wiimmfi", "nameEN": "Online Wiimmfi", "keywords": ["WFCPatcher"] },
+      { "nameES": "Backup NAND", "nameEN": "NAND Backup", "keywords": ["SafeNandManager"] }
+    ],
+    "wii": [
+      { "nameES": "Primeros pasos / Lo esencial", "nameEN": "Getting Started / Essentials", "keywords": ["HackMii", "Priiloader", "cIOS"], "beginner": true },
+      { "nameES": "Hackeo / CFW", "nameEN": "Hack / CFW", "keywords": ["Hack", "Priiloader", "cIOS"] },
+      { "nameES": "Loaders / Emuladores", "nameEN": "Loaders / Emulators", "keywords": ["USBLoader", "CFG", "WiiFlow", "Nintendont"] },
+      { "nameES": "Online", "nameEN": "Online", "keywords": ["WiiLink"] }
+    ],
+    "SD": [
+      { "nameES": "Formateo / Comprobación", "nameEN": "Format / Check", "keywords": ["GUIFormat", "H2testw", "RMPrepUSB", "HDDLLF"] }
+    ]
+  },
+  "faqCommon": [
+    { "labelES": "No arranca / brick", "labelEN": "Won't boot / brick", "keywords": ["brick", "semibrick", "black", "blue", "lazarus"] },
+    { "labelES": "No lee la SD", "labelEN": "SD not detected", "keywords": ["sd", "formatear", "guiformat", "h2testw"] },
+    { "labelES": "Error al instalar juegos", "labelEN": "Error installing games", "keywords": ["instalar", "awoo", "dbi", "fbi"] },
+    { "labelES": "Quiero jugar online", "labelEN": "Want to play online", "keywords": ["pretendo", "wiimmfi", "lan-play"] }
+  ]
+}
